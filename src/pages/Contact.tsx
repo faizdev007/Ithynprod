@@ -28,7 +28,8 @@ export default function Contact({ setCurrentPage }: ContactProps) {
     'Under £25k',
     '£25k - £50k',
     '£50k - £100k',
-    '£100k+'
+    '£100k - £200k',
+    '£200k+'
   ];
 
   const serviceOptions = [
