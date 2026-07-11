@@ -25,10 +25,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           {/* Brand Info */}
           <div className="space-y-4" id="footer-brand">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')}>
-              <div>
-                <span className="text-lg font-bold tracking-tight text-slate-900 italic">ITHYN</span>
-                <span className="block text-[9px] font-mono tracking-widest text-slate-500">DATA & AI</span>
-              </div>
+              <img src="/assets/ithynlogo.webp" alt="ITHYN Logo" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
               Sovereign B2B advisory and engineered delivery partnerships, optimizing data workflows and cloud architectures across the United Kingdom.

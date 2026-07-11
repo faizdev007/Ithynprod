@@ -40,10 +40,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')} id="nav-logo">
-            <div>
-              <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white italic">ITHYN</span>
-              <span className="block text-[9px] font-mono tracking-widest text-slate-500 dark:text-slate-400">DATA & AI</span>
-            </div>
+            <img src="/assets/ithynlogo.webp" alt="ITHYN Logo" className="h-10 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
