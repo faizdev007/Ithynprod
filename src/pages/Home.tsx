@@ -65,6 +65,17 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
     }
   ];
 
+const trustedby = [
+  { name: "Databricks", url: "/assets/trustedby/company1.webp" },
+  { name: "Snowflake", url: "/assets/trustedby/company2.webp" },
+  { name: "Azure", url: "/assets/trustedby/company3.webp" },
+  { name: "AWS", url: "/assets/trustedby/company15.webp" },
+  { name: "AWS", url: "/assets/trustedby/company16.webp" },
+  { name: "AWS", url: "/assets/trustedby/company17.webp" },
+  { name: "AWS", url: "/assets/trustedby/company18.webp" },
+  { name: "AWS", url: "/assets/trustedby/company22.webp" },
+];
+
   // Auto-play interval for interactive AI hero banner
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -185,7 +196,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-6 relative"
+              className="lg:col-span-6 relative h-full"
               id="hero-right"
             >
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 opacity-10 blur-xl animate-pulse animate-float" />
@@ -212,104 +223,20 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
             {/* The double lists for infinite looping */}
             <div className="animate-marquee px-10 flex items-center gap-16 py-3 whitespace-nowrap">
               {/* Logo Items */}
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">AETHER DATA</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">NOVUS CLOUD</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  <path d="M2 12h20" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">MERIDIAN CORP</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">VORTEX AI</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">APEX SOLUTIONS</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5h12s1-2.5-.5-3.5" />
-                  <path d="M19.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5h5s1-2.5-.5-3.5" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">ZENITH RETAIL</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">QUANTUM INC</span>
-              </div>
+              {trustedby.map((company, index) => (
+                <div key={index} className="flex items-center w-24 gap-2 text-slate-400 hover:text-slate-800 transition-colors">
+                  <img src={company.url} alt={company.name} className="w-auto" />
+                </div>
+              ))}
             </div>
 
             {/* Repeated set for infinite loop */}
             <div className="animate-marquee flex items-center gap-16 py-3 whitespace-nowrap" aria-hidden="true">
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">AETHER DATA</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">NOVUS CLOUD</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  <path d="M2 12h20" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">MERIDIAN CORP</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">VORTEX AI</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">APEX SOLUTIONS</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5h12s1-2.5-.5-3.5" />
-                  <path d="M19.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5h5s1-2.5-.5-3.5" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">ZENITH RETAIL</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors">
-                <svg className="h-6 w-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                </svg>
-                <span className="font-display font-extrabold text-sm tracking-tight text-slate-700">QUANTUM INC</span>
-              </div>
+              {trustedby.map((company, index) => (
+                <div key={index} className="flex items-center w-24 gap-2 text-slate-400 hover:text-slate-800 transition-colors">
+                  <img src={company.url} alt={company.name} className="w-auto" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

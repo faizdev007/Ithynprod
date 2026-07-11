@@ -40,9 +40,6 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')} id="nav-logo">
-            <div className="relative w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/10">
-              <Users className="w-4 h-4 text-white" />
-            </div>
             <div>
               <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white italic">ITHYN</span>
               <span className="block text-[9px] font-mono tracking-widest text-slate-500 dark:text-slate-400">DATA & AI</span>
@@ -105,7 +102,6 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                             >
                               <div>
                                 <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Data & AI</span>
-                                <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 font-sans">Core Platform Architecture & AI Solutions</span>
                               </div>
                             </button>
                              <button
@@ -119,7 +115,6 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                             >
                               <div>
                                 <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Application Services</span>
-                                <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 font-sans">Custom Engineering & Modern Apps</span>
                               </div>
                             </button>
                             <button
@@ -133,7 +128,6 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                             >
                               <div>
                                 <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Customer Service & BPO</span>
-                                <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 font-sans">24/7 Support Operations & Helpdesk</span>
                               </div>
                             </button>
                             <button
@@ -147,7 +141,6 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                             >
                               <div>
                                 <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Digital Marketing Services</span>
-                                <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 font-sans">Data-Driven Brands & Paid Growth</span>
                               </div>
                             </button>
                             <button
@@ -161,7 +154,6 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                             >
                               <div>
                                 <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Hire Certified Experts</span>
-                                <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 font-sans">Pre-Vetted B2B Data & AI Squads</span>
                               </div>
                             </button>
                           </div>

@@ -528,14 +528,14 @@ export default function MathAnimation({ theme = 'light' }: MathAnimationProps) {
 
   return (
     <div 
-      className="relative w-full overflow-visible group select-none"
+      className="relative w-full h-full overflow-visible group select-none"
       onMouseMove={handleMouseMove}
-      id="math-interactive-container"
+      ref={containerRef}
+      id="math-interactive-container "
     >
       {/* Main Canvas Drawing Stage */}
       <div 
-        ref={containerRef} 
-        className="w-full h-80 overflow-visible relative"
+        className="w-full h-full overflow-visible relative"
         id="math-canvas-wrapper"
       >
         <canvas ref={canvasRef} className="block w-full h-full" />

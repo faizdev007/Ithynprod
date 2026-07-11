@@ -203,7 +203,7 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
         </div>
 
         {/* Section divider with subtle graphics */}
-        <div className="max-w-5xl mx-auto flex items-center justify-center gap-4">
+        <div className="max-w-5xl hidden mx-auto flex items-center justify-center gap-4">
           <div className="h-px bg-slate-200 dark:bg-slate-800 flex-grow" />
           <div className="shrink-0 flex items-center gap-1 text-slate-400 font-mono text-3xs uppercase tracking-widest">
             <Sliders className="h-3.5 w-3.5 text-blue-600" />
@@ -213,7 +213,7 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
         </div>
 
         {/* Interactive B2B Squad Calculator */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg overflow-hidden" id="interactive-squad-calculator">
+        <div className="grid hidden grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg overflow-hidden" id="interactive-squad-calculator">
           
           {/* Left panel: sliders and configuration */}
           <div className="lg:col-span-7 p-6 sm:p-10 space-y-8 bg-slate-50/50 dark:bg-slate-900/50 border-r border-slate-100 dark:border-slate-800">
@@ -446,7 +446,7 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
         </div>
 
         {/* Global Compliance Assurance Section */}
-        <div className="rounded-2xl border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-8 max-w-4xl mx-auto space-y-6" id="compliance-assurance-banner">
+        <div className="rounded-2xl hidden  border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-8 max-w-4xl mx-auto space-y-6" id="compliance-assurance-banner">
           <div className="flex items-center gap-2 justify-center text-center">
             <ShieldCheck className="h-6 w-6 text-indigo-600 dark:text-indigo-400 animate-pulse" />
             <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white">Professional SLAs & ISO Compliant Inception</h3>

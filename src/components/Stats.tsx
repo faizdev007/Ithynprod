@@ -17,7 +17,7 @@ export default function Stats() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative rounded-2xl p-6 text-center transition-all duration-300 shadow-sm ${
+                className={`group relative overflow-hidden rounded-2xl p-6 text-center transition-all duration-300 shadow-sm ${
                   isHighlight 
                     ? 'bg-blue-50 border border-blue-200 hover:shadow-md' 
                     : 'bg-white border border-slate-200 hover:border-blue-500/20 hover:shadow-md'

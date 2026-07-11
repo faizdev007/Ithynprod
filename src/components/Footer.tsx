@@ -25,9 +25,6 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           {/* Brand Info */}
           <div className="space-y-4" id="footer-brand">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')}>
-              <div className="relative w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-                <Users className="w-4 h-4 text-white" />
-              </div>
               <div>
                 <span className="text-lg font-bold tracking-tight text-slate-900 italic">ITHYN</span>
                 <span className="block text-[9px] font-mono tracking-widest text-slate-500">DATA & AI</span>
@@ -58,12 +55,11 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             <ul className="mt-4 space-y-2.5 text-sm">
               {[
                 { id: 'home', label: 'Home Overview' },
-                { id: 'about', label: 'About ITHYN' },
-                { id: 'services', label: 'Consulting Services' },
+                { id: 'about', label: 'About' },
+                { id: 'services', label: 'Data & AI Services' },
                 { id: 'hire-experts', label: 'Hire Certified Experts' },
-                { id: 'case-studies', label: 'Enterprise Case Studies' },
-                { id: 'blog', label: 'Data & AI Insights' },
-                { id: 'contact', label: 'Book Advisory Session' }
+                { id: 'case-studies', label: 'Case Studies' },
+                { id: 'contact', label: 'Contact Us' }
               ].map((link) => (
                 <li key={link.id}>
                   <button

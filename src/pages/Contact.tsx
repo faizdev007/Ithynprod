@@ -293,7 +293,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                     </div>
 
                     {/* Encryption & Calendar Simulation */}
-                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-left font-mono text-[10px] text-slate-600 space-y-4 max-w-sm mx-auto shadow-3xs">
+                    <div className="rounded-xl hidden border border-slate-200 bg-slate-50 p-5 text-left font-mono text-[10px] text-slate-600 space-y-4 max-w-sm mx-auto shadow-3xs">
                       
                       {/* NDA Status */}
                       <div className="flex items-start gap-3 border-b border-slate-200 pb-3">

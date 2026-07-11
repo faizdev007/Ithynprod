@@ -283,6 +283,18 @@ export const TECH_ECOSYSTEM = [
   { name: "PostgreSQL", category: "Relational Database" }
 ];
 
+
+export const trustedby = [
+  { name: "Databricks", url: "/assets/trustedby/company1.webp" },
+  { name: "Snowflake", url: "/assets/trustedby/company2.webp" },
+  { name: "Azure", url: "/assets/trustedby/company3.webp" },
+  { name: "AWS", url: "/assets/trustedby/company15.webp" },
+  { name: "AWS", url: "/assets/trustedby/company16.webp" },
+  { name: "AWS", url: "/assets/trustedby/company17.webp" },
+  { name: "AWS", url: "/assets/trustedby/company18.webp" },
+  { name: "AWS", url: "/assets/trustedby/company22.webp" },
+];
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: "future-of-data-lakehouses",
