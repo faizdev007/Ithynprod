@@ -20,11 +20,11 @@ app.use(express.urlencoded({ extended: true }));
  * This prevents the app from crashing on start if GMAIL credentials are not present.
  */
 function getEmailTransporter() {
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_APP_PASSWORD;
+  const user = process.env.VITE_API_GMAIL_USER;
+  const pass = process.env.VITE_API_GMAIL_APP_PASSWORD;
 
   if (!user || !pass) {
-    console.warn("⚠️ GMAIL_USER or GMAIL_APP_PASSWORD not set. Emails will be logged but not sent.");
+    console.warn("⚠️ VITE_API_GMAIL_USER or VITE_API_GMAIL_APP_PASSWORD not set. Emails will be logged but not sent.");
     return null;
   }
 
@@ -45,7 +45,7 @@ function getEmailTransporter() {
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
-    smtpConfigured: !!(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD),
+    smtpConfigured: !!(process.env.VITE_API_GMAIL_USER && process.env.VITE_API_GMAIL_APP_PASSWORD),
   });
 });
 
@@ -113,8 +113,8 @@ app.post("/api/contact", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${name} (ITHYN Inquiry)" <${process.env.SENDER_USER}>`,
-        to: process.env.SENDER_USER,
+        from: `"${name} (ITHYN Inquiry)" <${process.env.VITE_API_SENDER_USER}>`,
+        to: process.env.VITE_API_SENDER_USER,
         replyTo: email,
         subject: `[ITHYN Consultation Request] ${name} - ${company}`,
         html: emailHtml,
@@ -131,7 +131,7 @@ app.post("/api/contact", async (req, res) => {
   } else {
     return res.status(200).json({ 
       success: true, 
-      message: "Form logged successfully. Configure GMAIL_USER and GMAIL_APP_PASSWORD for real emails." 
+      message: "Form logged successfully. Configure VITE_API_GMAIL_USER and VITE_API_GMAIL_APP_PASSWORD for real emails." 
     });
   }
 });
@@ -229,8 +229,8 @@ app.post("/api/hire-experts", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${clientName} (ITHYN Squad Reservation)" <${process.env.SENDER_USER}>`,
-        to: process.env.SENDER_USER,
+        from: `"${clientName} (ITHYN Squad Reservation)" <${process.env.VITE_API_SENDER_USER}>`,
+        to: process.env.VITE_API_SENDER_USER,
         replyTo: clientEmail,
         subject: `[ITHYN Squad Plan Reservation] ${clientName} - ${companyName}`,
         html: emailHtml,
@@ -247,7 +247,7 @@ app.post("/api/hire-experts", async (req, res) => {
   } else {
     return res.status(200).json({ 
       success: true, 
-      message: "Squad configuration logged successfully. Configure GMAIL_USER and GMAIL_APP_PASSWORD for real SMTP emails." 
+      message: "Squad configuration logged successfully. Configure VITE_API_GMAIL_USER and VITE_API_GMAIL_APP_PASSWORD for real SMTP emails." 
     });
   }
 });
@@ -304,8 +304,8 @@ app.post("/api/quick-contact", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${name} (ITHYN Quick Inquiry)" <${process.env.SENDER_USER}>`,
-        to: process.env.SENDER_USER,
+        from: `"${name} (ITHYN Quick Inquiry)" <${process.env.VITE_API_SENDER_USER}>`,
+        to: process.env.VITE_API_SENDER_USER,
         replyTo: email,
         subject: `[ITHYN Quick Consultation] ${name}`,
         html: emailHtml,
@@ -322,7 +322,7 @@ app.post("/api/quick-contact", async (req, res) => {
   } else {
     return res.status(200).json({ 
       success: true, 
-      message: "Quick request logged successfully. Configure GMAIL_USER and GMAIL_APP_PASSWORD for real SMTP emails." 
+      message: "Quick request logged successfully. Configure VITE_API_GMAIL_USER and VITE_API_GMAIL_APP_PASSWORD for real SMTP emails." 
     });
   }
 });
@@ -370,8 +370,8 @@ app.post("/api/newsletter", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"ITHYN Publications" <${process.env.SENDER_USER}>`,
-        to: process.env.SENDER_USER,
+        from: `"ITHYN Publications" <${process.env.VITE_API_SENDER_USER}>`,
+        to: process.env.VITE_API_SENDER_USER,
         replyTo: email,
         subject: `[ITHYN Newsletter Signup] ${email}`,
         html: emailHtml,
@@ -388,7 +388,7 @@ app.post("/api/newsletter", async (req, res) => {
   } else {
     return res.status(200).json({ 
       success: true, 
-      message: "Subscription logged successfully. Configure GMAIL_USER and GMAIL_APP_PASSWORD for real SMTP emails." 
+      message: "Subscription logged successfully. Configure VITE_API_GMAIL_USER and VITE_API_GMAIL_APP_PASSWORD for real SMTP emails." 
     });
   }
 });
