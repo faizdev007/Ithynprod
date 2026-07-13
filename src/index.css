@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display: "Space Grotesk", "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* Sleek Interface Theme: Royal Blue & Indigo color scale accents */
   --color-brand-50: #eff6ff;
@@ -102,7 +102,7 @@ body {
   animation: marquee 35s linear infinite;
 }
 
-.marquee-container:hover .animate-marquee {
+.animate-marquee:hover {
   animation-play-state: paused;
 }
 

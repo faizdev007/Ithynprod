@@ -113,7 +113,7 @@ app.post("/api/contact", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${name} (ITHYN Inquiry)" <${process.env.GMAIL_USER}>`,
+        from: `"${name} (ITHYN Inquiry)" <${process.env.SENDER_USER}>`,
         to: process.env.SENDER_USER,
         replyTo: email,
         subject: `[ITHYN Consultation Request] ${name} - ${company}`,
@@ -229,7 +229,7 @@ app.post("/api/hire-experts", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${clientName} (ITHYN Squad Reservation)" <${process.env.GMAIL_USER}>`,
+        from: `"${clientName} (ITHYN Squad Reservation)" <${process.env.SENDER_USER}>`,
         to: process.env.SENDER_USER,
         replyTo: clientEmail,
         subject: `[ITHYN Squad Plan Reservation] ${clientName} - ${companyName}`,
@@ -304,7 +304,7 @@ app.post("/api/quick-contact", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${name} (ITHYN Quick Inquiry)" <${process.env.GMAIL_USER}>`,
+        from: `"${name} (ITHYN Quick Inquiry)" <${process.env.SENDER_USER}>`,
         to: process.env.SENDER_USER,
         replyTo: email,
         subject: `[ITHYN Quick Consultation] ${name}`,
@@ -370,7 +370,7 @@ app.post("/api/newsletter", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"ITHYN Publications" <${process.env.GMAIL_USER}>`,
+        from: `"ITHYN Publications" <${process.env.SENDER_USER}>`,
         to: process.env.SENDER_USER,
         replyTo: email,
         subject: `[ITHYN Newsletter Signup] ${email}`,
