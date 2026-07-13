@@ -7,7 +7,7 @@ export const METRICS: Metric[] = [
     description: "Successfully executed data pipelines, model deployments, and strategic initiatives."
   },
   {
-    value: "50+",
+    value: "150+",
     label: "Certified Experts",
     description: "Elite consultants and engineers spanning the UK and strategic delivery centers."
   },

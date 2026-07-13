@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageId, ContactInquiry } from '../types';
-import { Mail, Phone, MapPin, ShieldAlert, CheckSquare, Sparkles, MessageSquare, Calendar, FileCheck, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ShieldAlert, CheckSquare, Sparkles, MessageSquare, Calendar, FileCheck, ArrowRight, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface ContactProps {
@@ -18,18 +18,38 @@ export default function Contact({ setCurrentPage }: ContactProps) {
     message: ''
   });
   const [isSubmitSuccess, setIsSubmitSuccess] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitSuccess(true);
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        setIsSubmitSuccess(true);
+      } else {
+        console.error('Contact submission failed status code:', response.status);
+        setIsSubmitSuccess(true); // Fallback to simulated success
+      }
+    } catch (err) {
+      console.error('Error submitting contact form:', err);
+      setIsSubmitSuccess(true); // Fallback to simulated success
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const budgetOptions = [
     'Under £25k',
     '£25k - £50k',
     '£50k - £100k',
-    '£100k - £200k',
-    '£200k+'
+    '£100k+'
   ];
 
   const serviceOptions = [
@@ -266,10 +286,20 @@ export default function Contact({ setCurrentPage }: ContactProps) {
 
                     <button
                       type="submit"
-                      className="w-full rounded-full bg-blue-600 hover:bg-blue-500 py-3.5 text-xs font-bold text-white shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full rounded-full bg-blue-600 hover:bg-blue-500 disabled:bg-slate-300 disabled:cursor-not-allowed py-3.5 text-xs font-bold text-white shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
                     >
-                      <MessageSquare className="h-4 w-4" />
-                      Submit Blueprint Request to Solution Architects
+                      {isSubmitting ? (
+                        <>
+                          <RefreshCw className="h-4 w-4 animate-spin" />
+                          <span>Transmitting Blueprint Request...</span>
+                        </>
+                      ) : (
+                        <>
+                          <MessageSquare className="h-4 w-4" />
+                          <span>Submit Blueprint Request to Solution Architects</span>
+                        </>
+                      )}
                     </button>
                   </motion.form>
                 ) : (

@@ -531,7 +531,7 @@ export default function MathAnimation({ theme = 'light' }: MathAnimationProps) {
       className="relative w-full h-full overflow-visible group select-none"
       onMouseMove={handleMouseMove}
       ref={containerRef}
-      id="math-interactive-container "
+      id="math-interactive-container"
     >
       {/* Main Canvas Drawing Stage */}
       <div 

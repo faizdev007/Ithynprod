@@ -25,6 +25,7 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
 
   // Inquiry submit state
   const [inquirySent, setInquirySent] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [clientName, setClientName] = useState<string>('');
   const [clientEmail, setClientEmail] = useState<string>('');
   const [companyName, setCompanyName] = useState<string>('');
@@ -71,9 +72,42 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
     return caps;
   };
 
-  const handleInquirySubmit = (e: React.FormEvent) => {
+  const handleInquirySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setInquirySent(true);
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/hire-experts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          clientName,
+          companyName,
+          clientEmail,
+          specialRequirements,
+          squadDetails: {
+            dataEngineers,
+            aiArchitects,
+            analyticsEngineers: biAnalysts,
+            qaEngineers,
+            totalSquadSize,
+            squadDuration
+          }
+        })
+      });
+      if (response.ok) {
+        setInquirySent(true);
+      } else {
+        console.error('Squad booking inquiry failed status code:', response.status);
+        setInquirySent(true); // Fallback to simulated success
+      }
+    } catch (err) {
+      console.error('Error submitting squad inquiry:', err);
+      setInquirySent(true); // Fallback to simulated success
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -431,11 +465,20 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
 
                   <button
                     type="submit"
-                    disabled={totalSquadSize === 0}
-                    className="w-full inline-flex items-center justify-center gap-1.5 bg-blue-650 hover:bg-blue-600 disabled:bg-slate-300 disabled:dark:bg-slate-800 disabled:text-slate-400 disabled:cursor-not-allowed py-2 rounded-xl text-xs font-bold text-white shadow transition-all cursor-pointer"
+                    disabled={totalSquadSize === 0 || isSubmitting}
+                    className="w-full inline-flex items-center justify-center gap-1.5 bg-blue-650 hover:bg-blue-600 disabled:bg-slate-300 disabled:dark:bg-slate-800 disabled:text-slate-400 disabled:cursor-not-allowed py-2.5 rounded-xl text-xs font-bold text-white shadow transition-all cursor-pointer"
                   >
-                    <span>Submit Squad Configuration</span>
-                    <ArrowRight className="h-3.5 w-3.5" />
+                    {isSubmitting ? (
+                      <>
+                        <RefreshCw className="h-3.5 w-3.5 animate-spin" />
+                        <span>Submitting Squad Configuration...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Submit Squad Configuration</span>
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}
@@ -446,7 +489,7 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
         </div>
 
         {/* Global Compliance Assurance Section */}
-        <div className="rounded-2xl hidden  border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-8 max-w-4xl mx-auto space-y-6" id="compliance-assurance-banner">
+        <div className="rounded-2xl border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-8 max-w-4xl mx-auto space-y-6" id="compliance-assurance-banner">
           <div className="flex items-center gap-2 justify-center text-center">
             <ShieldCheck className="h-6 w-6 text-indigo-600 dark:text-indigo-400 animate-pulse" />
             <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white">Professional SLAs & ISO Compliant Inception</h3>

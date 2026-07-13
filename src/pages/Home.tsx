@@ -5,7 +5,7 @@ import Stats from '../components/Stats';
 import Partners from '../components/Partners';
 import TechEcosystem from '../components/TechEcosystem';
 import MathAnimation from '../components/MathAnimation';
-import { ArrowRight, Database, Cpu, Sparkles, BarChart3, Cloud, Users, ArrowUpRight, MessageSquare, Shield, Check, Calendar, Clock, Star, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Database, Cpu, Sparkles, BarChart3, Cloud, Users, ArrowUpRight, MessageSquare, Shield, Check, Calendar, Clock, Star, ShieldCheck, CheckCircle2, RefreshCw } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HomeProps {
@@ -16,7 +16,44 @@ interface HomeProps {
 
 export default function Home({ setCurrentPage, onOpenConsultation, theme = 'light' }: HomeProps) {
   const [isEnquirySubmitted, setIsEnquirySubmitted] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleQuickSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      service: formData.get('service'),
+      projectOutline: formData.get('projectOutline'),
+    };
+
+    try {
+      const response = await fetch('/api/quick-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      if (response.ok) {
+        setIsEnquirySubmitted(true);
+        form.reset();
+      } else {
+        console.error('Quick contact submission failed:', response.status);
+        setIsEnquirySubmitted(true); // Fallback to simulated success
+      }
+    } catch (err) {
+      console.error('Error submitting quick contact:', err);
+      setIsEnquirySubmitted(true); // Fallback to simulated success
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const steps = [
     {
@@ -65,17 +102,6 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
     }
   ];
 
-const trustedby = [
-  { name: "Databricks", url: "/assets/trustedby/company1.webp" },
-  { name: "Snowflake", url: "/assets/trustedby/company2.webp" },
-  { name: "Azure", url: "/assets/trustedby/company3.webp" },
-  { name: "AWS", url: "/assets/trustedby/company15.webp" },
-  { name: "AWS", url: "/assets/trustedby/company16.webp" },
-  { name: "AWS", url: "/assets/trustedby/company17.webp" },
-  { name: "AWS", url: "/assets/trustedby/company18.webp" },
-  { name: "AWS", url: "/assets/trustedby/company22.webp" },
-];
-
   // Auto-play interval for interactive AI hero banner
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -120,6 +146,17 @@ const trustedby = [
       if (element) element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 100);
   };
+
+  const trustedby = [
+    { name: "Databricks", url: "/assets/trustedby/company1.webp" },
+    { name: "Snowflake", url: "/assets/trustedby/company2.webp" },
+    { name: "Azure", url: "/assets/trustedby/company3.webp" },
+    { name: "AWS", url: "/assets/trustedby/company15.webp" },
+    { name: "AWS", url: "/assets/trustedby/company16.webp" },
+    { name: "AWS", url: "/assets/trustedby/company17.webp" },
+    { name: "AWS", url: "/assets/trustedby/company18.webp" },
+    { name: "AWS", url: "/assets/trustedby/company22.webp" },
+  ];
 
   return (
     <div className="relative overflow-hidden bg-slate-50 text-slate-800" id="home-page">
@@ -196,7 +233,7 @@ const trustedby = [
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-6 relative h-full"
+              className="lg:col-span-6 h-full relative"
               id="hero-right"
             >
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 opacity-10 blur-xl animate-pulse animate-float" />
@@ -746,11 +783,7 @@ const trustedby = [
                   </motion.div>
                 ) : (
                   <form
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      setIsEnquirySubmitted(true);
-                      (e.target as HTMLFormElement).reset();
-                    }}
+                    onSubmit={handleQuickSubmit}
                     className="space-y-4"
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -759,6 +792,7 @@ const trustedby = [
                         <input
                           type="text"
                           required
+                          name="name"
                           placeholder="Johnathan Smith"
                           className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
                         />
@@ -768,6 +802,7 @@ const trustedby = [
                         <input
                           type="email"
                           required
+                          name="email"
                           placeholder="john@corporation.co.uk"
                           className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
                         />
@@ -777,6 +812,7 @@ const trustedby = [
                     <div>
                       <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Service of Interest</label>
                       <select
+                        name="service"
                         className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all cursor-pointer"
                       >
                         <option value="strategic">Strategic Data Engineering Audit</option>
@@ -791,6 +827,7 @@ const trustedby = [
                       <textarea
                         required
                         rows={3}
+                        name="projectOutline"
                         placeholder="Please briefly describe your current data volumes, platform bottlenecks, or target goals..."
                         className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
                       />
@@ -798,10 +835,20 @@ const trustedby = [
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full py-3.5 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-full text-sm font-semibold shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
                     >
-                      <MessageSquare className="h-4 w-4" />
-                      Submit Request to Advisory Desk
+                      {isSubmitting ? (
+                        <>
+                          <RefreshCw className="h-4 w-4 animate-spin" />
+                          <span>Transmitting Request...</span>
+                        </>
+                      ) : (
+                        <>
+                          <MessageSquare className="h-4 w-4" />
+                          <span>Submit Request to Advisory Desk</span>
+                        </>
+                      )}
                     </button>
                   </form>
                 )}

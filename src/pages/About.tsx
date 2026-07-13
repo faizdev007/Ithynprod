@@ -89,7 +89,7 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
         </div>
 
         {/* Timeline / Corporate Journey */}
-        <div className="space-y-10" id="about-timeline">
+        <div className="space-y-10 hidden" id="about-timeline">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="font-display text-2xl font-bold text-slate-900">The ITHYN Evolution</h2>
             <p className="text-xs text-slate-500 mt-1">Our path to establishing a premier strategic-delivery ecosystem in the UK.</p>
@@ -221,7 +221,7 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
         </div>
 
         {/* Executive Leadership */}
-        <div className="space-y-10" id="about-leadership">
+        <div className="space-y-10 hidden" id="about-leadership">
           <div className="text-center max-w-2xl mx-auto">
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-widest">
               Our Leadership
