@@ -177,8 +177,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           <div className="flex gap-6">
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Privacy Policy</a>
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Terms of Service</a>
-            <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Modern Slavery Statement</a>
-            <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Cookie Preferences</a>
+            <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Cookie Policy</a>
           </div>
         </div>
       </div>
