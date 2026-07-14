@@ -233,7 +233,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-6 h-full relative"
+              className="lg:col-span-6 h-80 md:h-full relative"
               id="hero-right"
             >
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 opacity-10 blur-xl animate-pulse animate-float" />
