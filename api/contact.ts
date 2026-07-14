@@ -1,41 +1,43 @@
-import express from "express";
 import nodemailer from "nodemailer";
 
-const app = express();
-
-export default app;
-
-function getEmailTransporter() {
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_APP_PASSWORD;
-
-  if (!user || !pass) {
-    console.warn("⚠️ GMAIL_USER or GMAIL_APP_PASSWORD not set. Emails will be logged but not sent.");
-    return null;
+export default async function handler(req: any, res: any ) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method Not Allowed" });
   }
 
-  return nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: user,
-      pass: pass,
-    },
-  });
-}
-
-// 2. Engagement Questionnaire (Contact Page) Form Submission
-app.post("/api/contact", async (req, res) => {
-  const { name, email, company, phone, serviceInterest, budget, message } = req.body;
+  const {
+    name,
+    email,
+    company,
+    phone,
+    serviceInterest,
+    budget,
+    message,
+  } = req.body;
 
   if (!name || !email || !company) {
-    return res.status(400).json({ error: "Missing required fields (name, email, company)" });
+    return res.status(400).json({
+      error: "Missing required fields"
+    });
   }
 
-  console.log(`📨 Received contact form from ${name} (${company})`);
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
 
-  const transporter = getEmailTransporter();
-  
-  const emailHtml = `
+  try {
+    await transporter.verify();
+
+    await transporter.sendMail({
+      from: `"${name}" <${process.env.SENDER_USER}>`,
+      to: process.env.SENDER_USER,
+      replyTo: email,
+      subject: `[ITHYN Consultation Request] ${name} - ${company}`,
+      html: `
     <div style="font-family: Arial, sans-serif; color: #1e293b; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
       <div style="background-color: #0f172a; padding: 24px; text-align: center;">
         <h1 style="color: #ffffff; font-size: 20px; margin: 0; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">ITHYN &bull; Advisory Desk</h1>
@@ -82,35 +84,18 @@ app.post("/api/contact", async (req, res) => {
         <p style="font-size: 11px; color: #64748b; margin: 0;">This email was sent from the ITHYN platform contact desk.</p>
       </div>
     </div>
-  `;
+  `,
+    });
 
-  if (transporter) {
-    try {
-    await transporter.verify();
-    console.log("SMTP connected");
+    return res.status(200).json({
+      success: true
+    });
+  } catch (err:any) {
+    console.error(err);
 
-    await transporter.sendMail(mailOptions);
-      await transporter.sendMail({
-        from: `"${name} (ITHYN Inquiry)" <${process.env.SENDER_USER}>`,
-        to: process.env.SENDER_USER,
-        replyTo: email,
-        subject: `[ITHYN Consultation Request] ${name} - ${company}`,
-        html: emailHtml,
-      });
-      return res.status(200).json({ success: true, message: "Email transmitted successfully via SMTP." });
-    } catch (err: any) {
-        console.error(err);
-      console.error("❌ Failed to send SMTP mail:", err);
-      return res.status(200).json({ 
-        success: true, 
-        message: "Logged but failed to transmit over SMTP. Check credentials.", 
-        warning: err.message 
-      });
-    }
-  } else {
-    return res.status(200).json({ 
-      success: true, 
-      message: "Form logged successfully. Configure GMAIL_USER and GMAIL_APP_PASSWORD for real emails." 
+    return res.status(500).json({
+      success: false,
+      error: err.message,
     });
   }
-});
+}
