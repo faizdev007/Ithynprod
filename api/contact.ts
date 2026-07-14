@@ -86,6 +86,10 @@ app.post("/api/contact", async (req, res) => {
 
   if (transporter) {
     try {
+    await transporter.verify();
+    console.log("SMTP connected");
+
+    await transporter.sendMail(mailOptions);
       await transporter.sendMail({
         from: `"${name} (ITHYN Inquiry)" <${process.env.SENDER_USER}>`,
         to: process.env.SENDER_USER,
@@ -95,6 +99,7 @@ app.post("/api/contact", async (req, res) => {
       });
       return res.status(200).json({ success: true, message: "Email transmitted successfully via SMTP." });
     } catch (err: any) {
+        console.error(err);
       console.error("❌ Failed to send SMTP mail:", err);
       return res.status(200).json({ 
         success: true, 
