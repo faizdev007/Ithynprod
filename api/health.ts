@@ -2,6 +2,8 @@ import express from "express";
 
 const app = express();
 
+export default app;
+
 // 1. Health check endpoint
 app.get("/api/health", (req, res) => {
   res.json({

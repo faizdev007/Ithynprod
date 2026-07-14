@@ -3,6 +3,8 @@ import nodemailer from "nodemailer";
 
 const app = express();
 
+export default app;
+
 function getEmailTransporter() {
   const user = process.env.VITE_API_GMAIL_USER;
   const pass = process.env.VITE_API_GMAIL_APP_PASSWORD;
