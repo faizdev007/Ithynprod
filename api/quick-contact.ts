@@ -1,39 +1,25 @@
-import express from "express";
 import nodemailer from "nodemailer";
 
-const app = express();
-
-export default app;
-
-function getEmailTransporter() {
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_APP_PASSWORD;
-
-  if (!user || !pass) {
-    console.warn("⚠️ GMAIL_USER or GMAIL_APP_PASSWORD not set. Emails will be logged but not sent.");
-    return null;
-  }
-
-  return nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: user,
-      pass: pass,
-    },
-  });
-}
-
 // 4. Quick Consultation Request (Home Page Block) Form Submission
-app.post("/api/quick-contact", async (req, res) => {
-  const { name, email, service, projectOutline } = req.body;
+export default async function handler(req:any, res:any) {
+    if (req.method !== "POST") {
+        return res.status(405).json({ error: "Method Not Allowed" });
+    }
+
+    const { name, email, service, projectOutline } = req.body;
+
+    const transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_APP_PASSWORD,
+          },
+    });
+  
 
   if (!name || !email) {
     return res.status(400).json({ error: "Missing required fields (name, email)" });
   }
-
-  console.log(`📨 Received quick contact request from ${name} (${email})`);
-
-  const transporter = getEmailTransporter();
 
   const emailHtml = `
     <div style="font-family: Arial, sans-serif; color: #1e293b; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
@@ -96,4 +82,4 @@ app.post("/api/quick-contact", async (req, res) => {
       message: "Quick request logged successfully. Configure GMAIL_USER and GMAIL_APP_PASSWORD for real SMTP emails." 
     });
   }
-});
+}

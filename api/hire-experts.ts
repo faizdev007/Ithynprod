@@ -1,40 +1,19 @@
-import express from "express";
 import nodemailer from "nodemailer";
 
-const app = express();
+export default async function handler(req:any, res:any) {
+    if (req.method !== "POST") {
+        return res.status(405).json({ error: "Method Not Allowed" });
+    }
 
-export default app;
+    const {
+        clientName,
+        companyName,
+        clientEmail,
+        specialRequirements,
+        squadDetails,
+    } = req.body;
 
-function getEmailTransporter() {
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_APP_PASSWORD;
-
-  if (!user || !pass) {
-    console.warn("⚠️ GMAIL_USER or GMAIL_APP_PASSWORD not set. Emails will be logged but not sent.");
-    return null;
-  }
-
-  return nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: user,
-      pass: pass,
-    },
-  });
-}
-
-
-// 3. Squad Builder / Certified Expert Reservation (Hire Experts Page) Submission
-app.post("/api/hire-experts", async (req, res) => {
-  const { 
-    clientName, 
-    companyName, 
-    clientEmail, 
-    specialRequirements,
-    squadDetails 
-  } = req.body;
-
-  if (!clientName || !clientEmail || !companyName) {
+    if (!clientName || !clientEmail || !companyName) {
     return res.status(400).json({ error: "Missing required client details (name, email, company)" });
   }
 
@@ -42,7 +21,13 @@ app.post("/api/hire-experts", async (req, res) => {
 
   const { dataEngineers = 0, aiArchitects = 0, analyticsEngineers = 0, qaEngineers = 0, totalSquadSize = 0, squadDuration = 1 } = squadDetails || {};
 
-  const transporter = getEmailTransporter();
+  const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD,
+      },
+});
 
   const emailHtml = `
     <div style="font-family: Arial, sans-serif; color: #1e293b; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
@@ -132,10 +117,11 @@ app.post("/api/hire-experts", async (req, res) => {
         warning: err.message 
       });
     }
-  } else {
-    return res.status(200).json({ 
-      success: true, 
-      message: "Squad configuration logged successfully. Configure GMAIL_USER and GMAIL_APP_PASSWORD for real SMTP emails." 
-    });
-  }
-});
+    }else{
+        return res.status(200).json({
+            success: true
+        });
+
+    }
+
+}
