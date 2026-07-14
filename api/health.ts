@@ -8,6 +8,6 @@ export default app;
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
-    smtpConfigured: !!(process.env.VITE_API_GMAIL_USER && process.env.VITE_API_GMAIL_APP_PASSWORD),
+    smtpConfigured: !!(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD),
   });
 });
