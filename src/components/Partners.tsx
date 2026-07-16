@@ -39,14 +39,14 @@ export default function Partners() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 text-base text-slate-600 leading-relaxed"
           >
-            Traditional consultancy delivers advice that gets lost in translation. ITHYN combines elite UK-based strategic consulting with the robust execution power of our certified, high-velocity engineering squads.
+            Traditional consultancy delivers advice that gets lost in translation. FLUMIX combines elite UK-based strategic consulting with the robust execution power of our certified, high-velocity engineering squads.
           </motion.p>
         </div>
 
         {/* Visual Diagram */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="partnership-model-grid">
           
-          {/* Column 1: ITHYN Strategic Advisory */}
+          {/* Column 1: FLUMIX Strategic Advisory */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -59,11 +59,11 @@ export default function Partners() {
               <Shield className="h-6 w-6" />
             </div>
             
-            <h3 className="mt-6 font-display text-xl font-bold text-slate-900">ITHYN Advisory</h3>
+            <h3 className="mt-6 font-display text-xl font-bold text-slate-900">FLUMIX Advisory</h3>
             <p className="mt-2 text-xs font-mono text-slate-500 uppercase tracking-widest">Strategic Consulting & Governance</p>
             
             <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-              ITHYN operates directly in advisory roles, structuring data architectures, aligning regulatory compliance (such as UK HIPAA counterparts, GDPR, MHRA), and defining business objectives.
+              FLUMIX operates directly in advisory roles, structuring data architectures, aligning regulatory compliance (such as UK HIPAA counterparts, GDPR, MHRA), and defining business objectives.
             </p>
 
             <ul className="mt-6 space-y-3">
@@ -95,7 +95,7 @@ export default function Partners() {
             </div>
           </div>
 
-          {/* Column 3: ITHYN Engineering */}
+          {/* Column 3: FLUMIX Engineering */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -108,7 +108,7 @@ export default function Partners() {
               <Users className="h-6 w-6" />
             </div>
             
-            <h3 className="mt-6 font-display text-xl font-bold text-slate-900">ITHYN Engineering</h3>
+            <h3 className="mt-6 font-display text-xl font-bold text-slate-900">FLUMIX Engineering</h3>
             <p className="mt-2 text-xs font-mono text-indigo-600 uppercase tracking-widest">Technical Implementation</p>
             
             <p className="mt-4 text-sm text-slate-600 leading-relaxed">
@@ -144,7 +144,7 @@ export default function Partners() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <span className="rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-xs font-semibold text-blue-600">The Client Advantage</span>
             <p className="text-sm text-slate-700 max-w-2xl text-left sm:text-center">
-              You sign a single, unified contract. ITHYN retains direct accountability for the strategic architecture and guarantees standard engineering velocity—protecting you from delays and costly internal talent gaps.
+              You sign a single, unified contract. FLUMIX retains direct accountability for the strategic architecture and guarantees standard engineering velocity—protecting you from delays and costly internal talent gaps.
             </p>
           </div>
         </motion.div>

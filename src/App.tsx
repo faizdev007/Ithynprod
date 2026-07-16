@@ -23,14 +23,14 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [activeSubService, setActiveSubService] = useState<string>('');
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    const saved = localStorage.getItem('ithyn-theme');
+    const saved = localStorage.getItem('FLUMIX-theme');
     return (saved as 'light' | 'dark') || 'light';
   });
 
   const toggleTheme = () => {
     const next = theme === 'light' ? 'dark' : 'light';
     setTheme(next);
-    localStorage.setItem('ithyn-theme', next);
+    localStorage.setItem('FLUMIX-theme', next);
   };
 
   const handleOpenConsultation = () => {

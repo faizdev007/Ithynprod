@@ -103,7 +103,6 @@ export default function Services({ setCurrentPage, onOpenConsultation }: Service
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <span className="text-2xs font-mono text-slate-500 uppercase tracking-widest">Sovereign Compliant</span>
                     <div className="h-2 w-2 rounded-full bg-blue-605" />
                   </div>
                 </div>
@@ -167,8 +166,8 @@ export default function Services({ setCurrentPage, onOpenConsultation }: Service
                 {/* Card CTA Footer */}
                 <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-2 text-2xs text-slate-500 font-mono">
-                    <Milestone className="h-4 w-4" />
-                    <span>Canary Wharf Advisory Desk &bull; Engineering delivery authorized</span>
+                    {/* <Milestone className="h-4 w-4" /> */}
+                    {/* <span>Canary Wharf Advisory Desk &bull; Engineering delivery authorized</span> */}
                   </div>
 
                   <button

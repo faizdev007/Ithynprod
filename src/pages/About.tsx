@@ -28,7 +28,7 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
     {
       name: "Edward Harrison",
       role: "VP of Strategic Partnerships",
-      bio: "Manages alliance programs and commercial scoping pipelines. Ed oversees the strategic synergy between ITHYN Advisory and our Engineering Delivery squads.",
+      bio: "Manages alliance programs and commercial scoping pipelines. Ed oversees the strategic synergy between FLUMIX Advisory and our Engineering Delivery squads.",
       experience: "Ex-Gartner Enterprise Advisor",
       avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300"
     }
@@ -45,13 +45,13 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-widest">
-            About ITHYN Data & AI
+            About FLUMIX Data & AI
           </span>
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
             Strategic Clarity. Production Velocity.
           </h1>
           <p className="text-base text-slate-600 leading-relaxed">
-            Headquartered in London, ITHYN was founded to eliminate the chasm between strategic AI advisory and actual production engineering. We don&apos;t just write reports—we architect and coordinate production systems.
+            Headquartered in London, FLUMIX was founded to eliminate the chasm between strategic AI advisory and actual production engineering. We don&apos;t just write reports—we architect and coordinate production systems.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
             </div>
             <h3 className="font-display text-base font-bold text-slate-900">Accountable Advisory</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              ITHYN Solution Architects retain single-point accountability. Even when massive engineering teams are deployed, your primary ITHYN advisor remains your steward from kick-off to delivery.
+              FLUMIX Solution Architects retain single-point accountability. Even when massive engineering teams are deployed, your primary FLUMIX advisor remains your steward from kick-off to delivery.
             </p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
         {/* Timeline / Corporate Journey */}
         <div className="space-y-10 hidden" id="about-timeline">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="font-display text-2xl font-bold text-slate-900">The ITHYN Evolution</h2>
+            <h2 className="font-display text-2xl font-bold text-slate-900">The FLUMIX Evolution</h2>
             <p className="text-xs text-slate-500 mt-1">Our path to establishing a premier strategic-delivery ecosystem in the UK.</p>
           </div>
 
@@ -126,9 +126,9 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
                 <div className="h-2 w-2 rounded-full bg-slate-450" />
               </div>
               <span className="font-mono text-xs font-bold text-slate-500">2024</span>
-              <h4 className="font-display text-sm font-bold text-slate-900 mt-1">Foundation of ITHYN Advisory</h4>
+              <h4 className="font-display text-sm font-bold text-slate-900 mt-1">Foundation of FLUMIX Advisory</h4>
               <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                ITHYN was established in Central London by a team of elite banking data consultants. Our starting mission was clear: eliminate fluff and deliver resilient data architectures that scale.
+                FLUMIX was established in Central London by a team of elite banking data consultants. Our starting mission was clear: eliminate fluff and deliver resilient data architectures that scale.
               </p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
               <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 border border-blue-100 px-3.5 py-1 text-xs font-mono font-bold text-blue-600 uppercase tracking-widest">The Delivery Engine</span>
               <h2 className="font-display text-2xl font-bold text-slate-900 sm:text-3xl">Our Strategic and Delivery Alignment</h2>
               <p className="text-xs text-slate-605 leading-relaxed">
-                Clients hire ITHYN for strategic security, architecture design, and governance audits. To execute these blueprints, our integrated engineering delivery teams translate specs directly into production environments.
+                Clients hire FLUMIX for strategic security, architecture design, and governance audits. To execute these blueprints, our integrated engineering delivery teams translate specs directly into production environments.
               </p>
               
               <div className="space-y-3 pt-2">
@@ -178,14 +178,14 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
 
             <div className="lg:col-span-6 border border-slate-200 bg-slate-50 rounded-2xl p-6 relative font-mono text-xs text-slate-600 shadow-inner" id="about-visual-flow">
               <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
-                <span className="text-2xs uppercase text-slate-550 tracking-wider">ITHYN Framework Integration</span>
+                <span className="text-2xs uppercase text-slate-550 tracking-wider">FLUMIX Framework Integration</span>
                 <span className="text-3xs text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full uppercase font-bold border border-blue-100">Connected</span>
               </div>
               
               <div className="space-y-4">
                 <div className="rounded-xl border border-slate-200 bg-white p-3.5 space-y-1.5">
                   <div className="flex items-center justify-between text-[11px] font-bold text-slate-900">
-                    <span>1. Strategic Advisory (ITHYN)</span>
+                    <span>1. Strategic Advisory (FLUMIX)</span>
                     <span className="text-blue-600 text-3xs uppercase font-bold tracking-wider">Architectural Design</span>
                   </div>
                   <p className="text-[10px] text-slate-600">Target metrics mapped, technology stacks audited, safety policies drafted.</p>
@@ -228,7 +228,7 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
             </span>
             <h2 className="mt-4 font-display text-2xl font-bold text-slate-900">The Strategic Advisory Board</h2>
             <p className="text-xs text-slate-500 leading-relaxed mt-1">
-              ITHYN consultants hold decades of engineering and strategic experience across banking, research, and cloud architecture.
+              FLUMIX consultants hold decades of engineering and strategic experience across banking, research, and cloud architecture.
             </p>
           </div>
 

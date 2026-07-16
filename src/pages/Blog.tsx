@@ -68,7 +68,7 @@ export default function Blog({ setCurrentPage }: BlogProps) {
               {/* Blog Page Header */}
               <div className="text-center max-w-3xl mx-auto space-y-4">
                 <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                  ITHYN Publications
+                  FLUMIX Publications
                 </span>
                 <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
                   Data & AI Insights

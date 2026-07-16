@@ -32,7 +32,7 @@ export default async function handler(req:any, res:any) {
   const emailHtml = `
     <div style="font-family: Arial, sans-serif; color: #1e293b; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
       <div style="background-color: #1e3a8a; padding: 24px; text-align: center;">
-        <h1 style="color: #ffffff; font-size: 20px; margin: 0; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">ITHYN &bull; Squad Reservation</h1>
+        <h1 style="color: #ffffff; font-size: 20px; margin: 0; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">FLUMIX &bull; Squad Reservation</h1>
         <p style="color: #93c5fd; font-size: 12px; margin: 4px 0 0 0; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase;">Certified Expert Squad Configured</p>
       </div>
       <div style="padding: 24px; background-color: #ffffff;">
@@ -94,7 +94,7 @@ export default async function handler(req:any, res:any) {
         </div>
       </div>
       <div style="background-color: #f1f5f9; padding: 16px; text-align: center; border-top: 1px solid #e2e8f0;">
-        <p style="font-size: 11px; color: #64748b; margin: 0;">This email was sent from the ITHYN expert planner configuration engine.</p>
+        <p style="font-size: 11px; color: #64748b; margin: 0;">This email was sent from the FLUMIX expert planner configuration engine.</p>
       </div>
     </div>
   `;
@@ -102,10 +102,10 @@ export default async function handler(req:any, res:any) {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${clientName} (ITHYN Squad Reservation)" <${process.env.SENDER_USER}>`,
+        from: `"${clientName} (FLUMIX Squad Reservation)" <${process.env.SENDER_USER}>`,
         to: process.env.SENDER_USER,
         replyTo: clientEmail,
-        subject: `[ITHYN Squad Plan Reservation] ${clientName} - ${companyName}`,
+        subject: `[FLUMIX Squad Plan Reservation] ${clientName} - ${companyName}`,
         html: emailHtml,
       });
       return res.status(200).json({ success: true, message: "Squad reservation transmitted successfully via SMTP." });

@@ -45,7 +45,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "data-etl-extraction",
-    title: "Data ETL & Extraction",
+    title: "Data ETL & ELT",
     shortDescription: "Extract and transform structured and unstructured records with automated validation layers.",
     fullDescription: "We construct high-performance ETL and ELT ingestion systems designed for flawless data extraction. Our pipelines safely pull from complex relational tables, legacy systems, and public APIs, converting raw values into standardized, queryable schemas.",
     iconName: "Cloud",
@@ -123,7 +123,7 @@ export const SERVICES: Service[] = [
     id: "managed-delivery",
     title: "Managed Delivery (Scaled Engineering)",
     shortDescription: "Acquire scaled resource delivery supported by our certified engineering squads.",
-    fullDescription: "ITHYN provides strategic direction and high-level architectural oversight, backed by our core engineering delivery squads. Through this hybrid model, we provide clients with deep technical resources, scalable sprint teams, and round-the-clock implementation support.",
+    fullDescription: "FLUMIX provides strategic direction and high-level architectural oversight, backed by our core engineering delivery squads. Through this hybrid model, we provide clients with deep technical resources, scalable sprint teams, and round-the-clock implementation support.",
     iconName: "Users",
     features: [
       "Strategic advisory paired with rapid, flexible engineering staff scaling",
@@ -301,7 +301,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "The Future of Data Lakehouses: Standardizing on Apache Iceberg in 2026",
     author: {
       name: "Marcus Sterling",
-      role: "Managing Director at ITHYN",
+      role: "Managing Director at FLUMIX",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=120"
     },
     date: "June 28, 2026",
@@ -338,7 +338,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: "scaling-technical-delivery",
-    title: "Strategic Advisory Meets Scaled Delivery: The ITHYN Engineering Model",
+    title: "Strategic Advisory Meets Scaled Delivery: The FLUMIX Engineering Model",
     author: {
       name: "Edward Harrison",
       role: "VP of Strategic Partnerships",
@@ -350,7 +350,7 @@ export const BLOG_POSTS: BlogPost[] = [
     summary: "Why traditional consulting is broken, and how a hybrid strategic-advisory and dedicated-delivery model ensures projects actually cross the finish line.",
     content: [
       "Historically, organizations hiring Data or AI support faced an unpleasant choice. On one side stood expensive boutique advisory firms, delivering beautiful strategic slide decks that ultimately gathered dust. On the other side stood pure outsourcing resource mills, throwing bodies at codebases without strategic direction, leading to over-engineered or misaligned systems.",
-      "We believe there is a better way. At ITHYN, we focus intensely on strategic design, compliance guardrails, target state data architecture, and executive alignment. Then, we coordinate directly with our certified engineering squads to bring this strategy to life.",
+      "We believe there is a better way. At FLUMIX, we focus intensely on strategic design, compliance guardrails, target state data architecture, and executive alignment. Then, we coordinate directly with our certified engineering squads to bring this strategy to life.",
       "Our engineering units supply deep, certified squads that scale dynamically to meet project sprint schedules. This keeps advisory overhead low while supplying clients with the immense technical muscle required for enterprise integrations.",
       "In this post, we discuss how this dual structure operates in practice, how we maintain unified accountability, and why it consistently saves our clients up to 35% in total implementation costs."
     ],
@@ -360,13 +360,13 @@ export const BLOG_POSTS: BlogPost[] = [
 
 export const TESTIMONIALS = [
   {
-    quote: "ITHYN didn't just give us a strategy deck. Together with their engineering delivery team, they embedded a functional, certified squad that rebuilt our customer pipeline in three months. Our average order value has climbed month-over-month.",
+    quote: "FLUMIX didn't just give us a strategy deck. Together with their engineering delivery team, they embedded a functional, certified squad that rebuilt our customer pipeline in three months. Our average order value has climbed month-over-month.",
     author: "Caroline Vance",
     role: "Chief Technology Officer",
     company: "Prestige Brands UK"
   },
   {
-    quote: "Data sovereignty in medical biotech is non-negotiable. ITHYN designed a secure private RAG assistant that safely index clinical documents in our own Azure tenant. The compliance guardrails and hallucination checks are state-of-the-art.",
+    quote: "Data sovereignty in medical biotech is non-negotiable. FLUMIX designed a secure private RAG assistant that safely index clinical documents in our own Azure tenant. The compliance guardrails and hallucination checks are state-of-the-art.",
     author: "Dr. Alistair Vance",
     role: "Head of Computational Medicine",
     company: "BioPharma Laboratories UK"
@@ -419,7 +419,7 @@ export const JOB_OPENINGS: JobOpening[] = [
       "Serve as the primary technical authority on client Generative AI engagements, aligning business requirements with optimal model architectures.",
       "Implement production-ready RAG architectures integrating state-of-the-art vector stores, re-ranking algorithms, and tokenization techniques.",
       "Establish automated evaluation frameworks to track model safety, groundedness, and hallucination metrics.",
-      "Represent ITHYN in executive-level strategic advisory workshops regarding corporate AI safety policy and vendor selection."
+      "Represent FLUMIX in executive-level strategic advisory workshops regarding corporate AI safety policy and vendor selection."
     ],
     requirements: [
       "Proven track record of deploying machine learning models or cognitive APIs to production.",
@@ -441,7 +441,7 @@ export const JOB_OPENINGS: JobOpening[] = [
     location: "London, UK (Hybrid - 3 Days in Office)",
     type: "Contract or Full-Time",
     compensation: "£75,000 - £90,000 or Competitive Day Rate",
-    summary: "We are looking for a hybrid delivery manager who understands the technical nuances of Data & AI projects. You will act as the crucial link coordinating ITHYN's strategic consultants, our enterprise clients, and our engineering squads.",
+    summary: "We are looking for a hybrid delivery manager who understands the technical nuances of Data & AI projects. You will act as the crucial link coordinating FLUMIX's strategic consultants, our enterprise clients, and our engineering squads.",
     responsibilities: [
       "Manage project timelines, agile backlogs, and resource allocations across active data consulting projects.",
       "Coordinate directly with the engineering technical leads to monitor sprint velocity, deliverable sign-offs, and QA validation.",

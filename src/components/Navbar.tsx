@@ -34,13 +34,24 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("quick-contact");
+    if(!contactSection){  
+      setCurrentPage('home');
+    }
+    contactSection?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md" id="navbar">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')} id="nav-logo">
-            <img src="/assets/ithynlogo.webp" alt="ITHYN Logo" className="h-10 w-auto" />
+            <img src="/assets/flumixlogo2.webp" alt="FLUMIX Logo" className="h-10 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
@@ -193,7 +204,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
               {theme === 'dark' ? <Sun className="h-5 w-5 text-amber-500" /> : <Moon className="h-5 w-5 text-slate-600" />}
             </button>
             <button
-              onClick={onOpenConsultation}
+              onClick={scrollToContact}
               className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-blue-600/10 flex items-center gap-1.5 cursor-pointer"
               id="nav-consultation-btn"
             >

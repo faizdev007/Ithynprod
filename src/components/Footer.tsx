@@ -53,42 +53,28 @@ export default function Footer({ setCurrentPage }: FooterProps) {
       <div className="absolute -bottom-48 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-300/10 glow-blur" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
           {/* Brand Info */}
           <div className="space-y-4" id="footer-brand">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')}>
-              <img src="/assets/ithynlogo.webp" alt="ITHYN Logo" className="h-10 w-auto" />
+              <img src="/assets/flumixlogo2.webp" alt="FLUMIX Logo" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
               Sovereign B2B advisory and engineered delivery partnerships, optimizing data workflows and cloud architectures across the United Kingdom.
             </p>
-            <div className="space-y-2 pt-2 text-xs text-slate-600">
-              <div className="flex items-center gap-2">
-                <Building className="h-4 w-4 text-blue-600 shrink-0" />
-                <span>London Headquarters: Canary Wharf, London, E14 5AB</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-blue-600 shrink-0" />
-                <span>inquiries@ithyn.ai</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-blue-600 shrink-0" />
-                <span>+44 (0) 20 7946 0831</span>
-              </div>
-            </div>
           </div>
 
           {/* Sitemap Links */}
           <div id="footer-sitemap">
             <h3 className="font-display text-sm font-bold uppercase tracking-wider text-slate-900">Sitemap</h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <ul className="mt-4 space-y-4 grid grid-cols-2 text-sm">
               {[
-                { id: 'home', label: 'Home Overview' },
-                { id: 'about', label: 'About' },
+                { id: 'home', label: 'Home' },
                 { id: 'services', label: 'Data & AI Services' },
+                { id: 'about', label: 'About' },
                 { id: 'hire-experts', label: 'Hire Certified Experts' },
+                { id: 'contact', label: 'Contact Us' },
                 { id: 'case-studies', label: 'Case Studies' },
-                { id: 'contact', label: 'Contact Us' }
               ].map((link) => (
                 <li key={link.id}>
                   <button
@@ -103,8 +89,27 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             </ul>
           </div>
 
+
+          <div id="footer-sitemap">
+            <h3 className="font-display text-sm font-bold uppercase tracking-wider text-slate-900">Contact Information</h3>
+            <div className="space-y-2 pt-2 text-xs text-slate-600">
+              <div className="flex items-center gap-2">
+                <Building className="h-4 w-4 text-blue-600 shrink-0" />
+                <span>Kemp House, 160 City Road,  London, EC1V 2NX</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-blue-600 shrink-0" />
+                <span>inquiries@flumix.ai</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-blue-600 shrink-0" />
+                <span>+44 77  3435  4500</span>
+              </div>
+            </div>
+          </div>
+
           {/* Delivery Ecosystem */}
-          <div className="space-y-4" id="footer-delivery-partner">
+          <div className="space-y-4 hidden" id="footer-delivery-partner">
             <h3 className="font-display text-sm font-bold uppercase tracking-wider text-slate-900">Delivery Ecosystem</h3>
             <div className="rounded-xl border border-slate-200 bg-white/80 p-4 shadow-sm">
               <div className="flex items-center gap-2">
@@ -130,7 +135,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           </div>
 
           {/* Interactive B2B Newsletter Sign-up (Safe State Confirmation) */}
-          <div className="space-y-4" id="footer-newsletter">
+          <div className="space-y-4 hidden" id="footer-newsletter">
             <h3 className="font-display text-sm font-bold uppercase tracking-wider text-slate-900">Subscribe to Insights</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Receive our bi-weekly publication addressing Apache Iceberg metadata trends, safe Generative AI enterprise frameworks, and dbt modeling.
@@ -173,7 +178,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
         {/* Bottom Panel */}
         <div className="mt-12 border-t border-slate-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500" id="footer-bottom">
-          <p>© {currentYear} ITHYN Data & AI Ltd. All rights reserved. Registered in England & Wales.</p>
+          <p>© {currentYear} FLUMIX Data & AI Ltd. All rights reserved. Registered in England & Wales.</p>
           <div className="flex gap-6">
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Privacy Policy</a>
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Terms of Service</a>

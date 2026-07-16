@@ -29,23 +29,27 @@ export default async function handler(req: any, res: any ) {
     },
   });
 
+  async function thirdPartyFunction() {
+      throw new Error("Request failed");
+  }
+
   try {
     await transporter.verify();
-
+    
     await transporter.sendMail({
       from: `"${name}" <${process.env.SENDER_USER}>`,
       to: process.env.SENDER_USER,
       replyTo: email,
-      subject: `[ITHYN Consultation Request] ${name} - ${company}`,
+      subject: `[FLUMIX Consultation Request] ${name} - ${company}`,
       html: `
     <div style="font-family: Arial, sans-serif; color: #1e293b; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
       <div style="background-color: #0f172a; padding: 24px; text-align: center;">
-        <h1 style="color: #ffffff; font-size: 20px; margin: 0; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">ITHYN &bull; Advisory Desk</h1>
+        <h1 style="color: #ffffff; font-size: 20px; margin: 0; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">FLUMIX &bull; Advisory Desk</h1>
         <p style="color: #60a5fa; font-size: 12px; margin: 4px 0 0 0; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase;">New Engagement Inquiry</p>
       </div>
       <div style="padding: 24px; background-color: #ffffff;">
         <p style="font-size: 14px; line-height: 1.5; color: #475569;">
-          A strategic consultation request has been received from the ITHYN corporate contact gateway.
+          A strategic consultation request has been received from the FLUMIX corporate contact gateway.
         </p>
         
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
@@ -81,7 +85,7 @@ export default async function handler(req: any, res: any ) {
         </div>
       </div>
       <div style="background-color: #f1f5f9; padding: 16px; text-align: center; border-top: 1px solid #e2e8f0;">
-        <p style="font-size: 11px; color: #64748b; margin: 0;">This email was sent from the ITHYN platform contact desk.</p>
+        <p style="font-size: 11px; color: #64748b; margin: 0;">This email was sent from the FLUMIX platform contact desk.</p>
       </div>
     </div>
   `,

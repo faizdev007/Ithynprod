@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { PageId, ContactInquiry } from '../types';
 import { Mail, Phone, MapPin, ShieldAlert, CheckSquare, Sparkles, MessageSquare, Calendar, FileCheck, ArrowRight, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { validatePhone } from '../js/dynamicphonevalidate';
+import { formatPhone } from '../js/autoformatphone';
+import { getPhoneMaxLength } from '../js/maxlength';
+import { isPhoneComplete } from '../js/isphonecomplete';
 
 interface ContactProps {
   setCurrentPage: (page: PageId) => void;
@@ -19,9 +23,32 @@ export default function Contact({ setCurrentPage }: ContactProps) {
   });
   const [isSubmitSuccess, setIsSubmitSuccess] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [country, setCountry] = useState("GB");
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState(false);
+
+  const handlePhoneChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const formatted = formatPhone(e.target.value, country);
+
+    setPhone(formatted);
+    setPhoneError(
+      formatted.length > 0 && !isPhoneComplete(formatted)
+    );
+    setPhone(formatted);
+    setFormData({ ...formData, phone: formatted });
+  };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!isPhoneComplete(formData.phone)) {
+      setPhoneError(true);
+      return;
+    }
+
+    setPhoneError(false);
     setIsSubmitting(true);
     try {
       const response = await fetch('/api/contact', {
@@ -87,7 +114,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
           {/* Left Column: Address, Phones, Commitments */}
           <div className="lg:col-span-5 space-y-8" id="contact-left-details">
             <div className="space-y-4">
-              <h2 className="font-display text-xl font-bold text-slate-900">Canary Wharf Headquarters</h2>
+              <h2 className="font-display text-xl font-bold text-slate-900">Flumix Headquarters</h2>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Our strategic advisory desk is located in London&apos;s primary tech and financial hub, coordinating globally with our engineering squads.
               </p>
@@ -100,9 +127,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                 <div>
                   <span className="block font-bold text-slate-900">Office Address</span>
                   <p className="text-slate-600 mt-1 leading-relaxed">
-                    ITHYN Data & AI Ltd.<br />
-                    Level 37, One Canada Square,<br />
-                    Canary Wharf, London, E14 5AB
+                    Kemp House, 160 City Road,  London, EC1V 2NX
                   </p>
                 </div>
               </div>
@@ -112,8 +137,8 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                 <div>
                   <span className="block font-bold text-slate-900">Inquiry Gateways</span>
                   <p className="text-slate-600 mt-1 leading-relaxed">
-                    Client Scopes: <strong className="text-slate-900">inquiries@ithyn.ai</strong><br />
-                    Partnership Operations: <strong className="text-slate-900">alliances@ithyn.ai</strong>
+                    Client Scopes: <strong className="text-slate-900">inquiries@flumix.ai</strong><br />
+                    Partnership Operations: <strong className="text-slate-900">alliances@flumix.ai</strong>
                   </p>
                 </div>
               </div>
@@ -123,7 +148,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                 <div>
                   <span className="block font-bold text-slate-900">Strategic Hotline</span>
                   <p className="text-slate-600 mt-1 leading-relaxed">
-                    Tel: <strong className="text-slate-900">+44 (0) 20 7946 0831</strong><br />
+                    Tel: <strong className="text-slate-900">+44 77 3435 4500</strong><br />
                     Mon - Fri, 08:30 - 18:00 GMT / BST
                   </p>
                 </div>
@@ -137,7 +162,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                 <span>NDA & Confidentiality Statement</span>
               </div>
               <p className="text-2xs text-slate-600 leading-relaxed">
-                ITHYN is fully insured and operates under English and Welsh corporate confidentiality statutes. Prior to discussing proprietary source schemas, patient directories, or financial transactional ledgers, our alliances desk provides structured bilateral NDAs.
+                FLUMIX is fully insured and operates under English and Welsh corporate confidentiality statutes. Prior to discussing proprietary source schemas, patient directories, or financial transactional ledgers, our alliances desk provides structured bilateral NDAs.
               </p>
             </div>
           </div>
@@ -203,10 +228,15 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Contact Telephone</label>
                         <input
                           type="tel"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          value={phone}
+                          onChange={handlePhoneChange}
+                          maxLength={getPhoneMaxLength(country)}
                           placeholder="+44 20 7900 1234"
-                          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
+                          className={`w-full rounded-lg border px-3 py-2 text-sm ${
+                            phoneError
+                              ? "border-red-500 focus:border-red-500"
+                              : "border-slate-200 focus:border-blue-500"
+                          }`}
                         />
                       </div>
                     </div>

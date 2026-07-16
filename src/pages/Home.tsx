@@ -58,10 +58,10 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
   const steps = [
     {
       title: "Query Analysis",
-      subtitle: "ITHYN Agent Intake",
-      file: "ithyn_intake.py",
+      subtitle: "FLUMIX Agent Intake",
+      file: "FLUMIX_intake.py",
       command: "> ANALYZING USER REQUEST --model=deep-reasoning-v2",
-      log1: "Parsed prompt: 'Incorporate ITHYN predictive agent into logistics flow...'",
+      log1: "Parsed prompt: 'Incorporate FLUMIX predictive agent into logistics flow...'",
       log2: "Extracted intent: Neural orchestration layer for B2B supply logistics.",
       color: "from-blue-500 to-cyan-500",
       accentColor: "text-blue-500",
@@ -80,7 +80,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
     },
     {
       title: "Agent Reasoning",
-      subtitle: "ITHYN Cognitive Loop",
+      subtitle: "FLUMIX Cognitive Loop",
       file: "cognitive_core.sh",
       command: "> COMPILING REASONING GRAPH --strategy=governance",
       log1: "Synthesizing mitigation plan: Scale Databricks clusters (+2 worker nodes).",
@@ -289,7 +289,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Core Data & AI Services</h2>
             <p className="mt-4 text-base text-slate-650">
-              ITHYN specializes in high-level strategic architecture and rigorous governance. We couple our plans with deep engineering expertise to deploy actual production systems.
+              FLUMIX specializes in high-level strategic architecture and rigorous governance. We couple our plans with deep engineering expertise to deploy actual production systems.
             </p>
           </div>
 
@@ -318,7 +318,6 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-slate-150 flex items-center justify-between">
-                  <span className="text-3xs font-mono tracking-wider uppercase text-slate-400">ITHYN Core Capability</span>
                   <button
                     onClick={() => handleServiceClick(service.id)}
                     className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 group-hover:text-blue-500 hover:underline transition-colors cursor-pointer"
@@ -344,10 +343,10 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
       </section>
 
       {/* Interactive Partnership Model Detail */}
-      <Partners />
+      {/* <Partners /> */}
 
       {/* Case Studies Preview Section */}
-      <section className="relative py-24 bg-slate-50 border-t border-slate-200" id="case-studies-preview">
+      <section className="relative hidden py-24 bg-slate-50 border-t border-slate-200" id="case-studies-preview">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16">
@@ -423,7 +422,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
       </section>
 
       {/* Technology Ecosystem Section */}
-      <TechEcosystem />
+      {/* <TechEcosystem /> */}
 
       {/* Hire an Expert Section */}
       <section className="relative py-24 bg-white border-t border-slate-200" id="hire-expert-section">
@@ -438,7 +437,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
               ON-DEMAND ELITE TALENT
             </span>
             <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Hire Certified ITHYN Experts
+              Hire Certified FLUMIX Experts
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed">
               Bypass slow hiring pipelines. Embed elite UK-vetted data engineers, cloud architects, and machine learning experts directly into your sprint teams in under 48 hours.
@@ -650,7 +649,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
             </h2>
             
             <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
-              We structure our consulting agreements around predictable monthly retainers or scoped milestones. ITHYN manages strategic architectural blueprints and continuous delivery validation, protecting your budget from scope creep.
+              We structure our consulting agreements around predictable monthly retainers or scoped milestones. FLUMIX manages strategic architectural blueprints and continuous delivery validation, protecting your budget from scope creep.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto pt-4" id="pricing-tiers-cards">
@@ -664,7 +663,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                 <div className="absolute right-2 top-2 rounded-full bg-blue-600 text-white px-2.5 py-0.5 text-[8px] font-bold uppercase tracking-wider">Most Needed</div>
                 <span className="text-2xs font-mono font-bold text-blue-600 uppercase tracking-widest">Execution</span>
                 <h4 className="font-display text-base font-bold text-slate-900 mt-1">Managed Squad</h4>
-                <p className="text-3xs text-slate-500 mt-1 leading-relaxed">ITHYN architecture oversight + dedicated engineering sprint pods.</p>
+                <p className="text-3xs text-slate-500 mt-1 leading-relaxed">FLUMIX architecture oversight + dedicated engineering sprint pods.</p>
                 <div className="mt-4 border-t border-slate-100 pt-3 text-xs font-semibold text-indigo-600">Monthly Sprints</div>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left hover:border-slate-300 transition-all shadow-sm">
@@ -744,7 +743,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
       </section>
 
       {/* Bottom Mini Contact Form */}
-      <section className="relative py-20 bg-slate-50 border-t border-slate-200" id="quick-contact">
+      <section  className="relative py-20 bg-slate-50 border-t border-slate-200" id="quick-contact">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-4" id="quick-contact-left">

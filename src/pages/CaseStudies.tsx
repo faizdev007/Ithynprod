@@ -41,7 +41,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
             Enterprise Case Studies
           </h1>
           <p className="text-base text-slate-600 leading-relaxed">
-            Discover how ITHYN’s architectural advisory, operating in sync with our certified engineering squads, has resolved core pipeline bottlenecks and deployed secure cognitive intelligence.
+            Discover how FLUMIX’s architectural advisory, operating in sync with our certified engineering squads, has resolved core pipeline bottlenecks and deployed secure cognitive intelligence.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
                           {/* Solution Card */}
                           <div className="space-y-3.5">
                             <div className="inline-flex items-center gap-2 rounded-full bg-blue-5 border border-blue-100 px-3 py-1 text-2xs font-mono text-blue-600">
-                              <span>ITHYN Advisory + Technical Execution</span>
+                              <span>FLUMIX Advisory + Technical Execution</span>
                             </div>
                             <h4 className="font-display text-sm font-bold text-slate-900">The Technical Execution</h4>
                             <p className="text-xs text-slate-600 leading-relaxed">
@@ -153,7 +153,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
 
                         {/* Technology Footer Bar */}
                         <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                          <div className="flex items-center gap-2">
+                          <div className="flex ps-4 items-center gap-2">
                             <Terminal className="h-4 w-4 text-slate-500" />
                             <span className="text-3xs font-mono text-slate-550 uppercase tracking-widest">Platform Integration Stack:</span>
                           </div>
