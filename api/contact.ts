@@ -1,3 +1,4 @@
+import { validatePhone } from "@/src/js/validatePhone";
 import nodemailer from "nodemailer";
 
 export default async function handler(req: any, res: any) {
@@ -26,6 +27,13 @@ export default async function handler(req: any, res: any) {
     return res.status(400).json({
       success: false,
       error: "Missing required fields",
+    });
+  }
+
+  if(!validatePhone(phone).valid){
+    return res.status(400).json({
+      success: false,
+      error: "Invalid phone number",
     });
   }
 
@@ -77,7 +85,7 @@ export default async function handler(req: any, res: any) {
               <td style="padding:10px 0;font-weight:bold;">Phone</td>
               <td>${phone || "Not provided"}</td>
             </tr>
-            
+
             <tr>
               <td style="padding:10px 0;font-weight:bold;">LinkedIn ID</td>
               <td>${
