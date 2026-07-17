@@ -46,12 +46,12 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md" id="navbar">
+    <nav className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/85 dark:bg-[#020a26] backdrop-blur-md" id="navbar">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')} id="nav-logo">
-            <img src="/assets/flumixlogo2.webp" alt="FLUMIX Logo" className="h-10 w-auto" />
+            <img src="/assets/logo/logolight.webp" alt="FLUMIX Logo" className="h-16 w-auto" />
           </div>
 
           {/* Desktop Navigation */}

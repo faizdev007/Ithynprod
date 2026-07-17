@@ -6,16 +6,17 @@ export default async function handler(req: any, res: any ) {
   }
 
   const {
-    name,
-    email,
+    firstname,
+    lastname,
+    jobtitle,
     company,
+    linkedin,
+    email,
     phone,
-    serviceInterest,
-    budget,
     message,
   } = req.body;
 
-  if (!name || !email || !company) {
+  if (!firstname || !lastname || !email || !company || !jobtitle || !message) {
     return res.status(400).json({
       error: "Missing required fields"
     });
@@ -37,10 +38,10 @@ export default async function handler(req: any, res: any ) {
     await transporter.verify();
     
     await transporter.sendMail({
-      from: `"${name}" <${process.env.SENDER_USER}>`,
+      from: `"${firstname} ${lastname}" <${process.env.SENDER_USER}>`,
       to: process.env.SENDER_USER,
       replyTo: email,
-      subject: `[FLUMIX Consultation Request] ${name} - ${company}`,
+      subject: `[FLUMIX Consultation Request] ${firstname} ${lastname} - ${company}`,
       html: `
     <div style="font-family: Arial, sans-serif; color: #1e293b; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
       <div style="background-color: #0f172a; padding: 24px; text-align: center;">
@@ -55,7 +56,7 @@ export default async function handler(req: any, res: any ) {
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
           <tr style="border-bottom: 1px solid #f1f5f9;">
             <td style="padding: 10px 0; font-weight: bold; font-size: 12px; color: #64748b; text-transform: uppercase; width: 150px;">Full Name</td>
-            <td style="padding: 10px 0; font-size: 14px; color: #0f172a;">${name}</td>
+            <td style="padding: 10px 0; font-size: 14px; color: #0f172a;">${firstname} ${lastname}</td>
           </tr>
           <tr style="border-bottom: 1px solid #f1f5f9;">
             <td style="padding: 10px 0; font-weight: bold; font-size: 12px; color: #64748b; text-transform: uppercase;">Corporate Email</td>

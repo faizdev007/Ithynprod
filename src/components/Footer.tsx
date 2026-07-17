@@ -57,7 +57,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           {/* Brand Info */}
           <div className="space-y-4" id="footer-brand">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')}>
-              <img src="/assets/flumixlogo2.webp" alt="FLUMIX Logo" className="h-10 w-auto" />
+              <img src="/assets/logo/logolight.webp" alt="FLUMIX Logo" className="h-16 w-auto" />
             </div>
             <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
               Sovereign B2B advisory and engineered delivery partnerships, optimizing data workflows and cloud architectures across the United Kingdom.

@@ -26,9 +26,10 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
     const formData = new FormData(form);
     
     const payload = {
-      name: formData.get('name'),
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      jobtitle: formData.get('jobTitle'),
       email: formData.get('email'),
-      service: formData.get('service'),
       projectOutline: formData.get('projectOutline'),
     };
 
@@ -787,17 +788,39 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Full Name</label>
+                        <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">First Name *</label>
                         <input
                           type="text"
                           required
-                          name="name"
-                          placeholder="Johnathan Smith"
+                          name="firstName"
+                          placeholder="Johnathan"
                           className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
                         />
                       </div>
                       <div>
-                        <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Corporate Email</label>
+                        <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Last Name *</label>
+                        <input
+                          type="text"
+                          required
+                          name="lastName"
+                          placeholder="Smith"
+                          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Job title *</label>
+                        <input
+                          type="text"
+                          required
+                          name="jobTitle"
+                          placeholder="Data Engineer"
+                          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Corporate Email *</label>
                         <input
                           type="email"
                           required
@@ -807,22 +830,9 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                         />
                       </div>
                     </div>
-
+                    
                     <div>
-                      <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Service of Interest</label>
-                      <select
-                        name="service"
-                        className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-700 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all cursor-pointer"
-                      >
-                        <option value="strategic">Strategic Data Engineering Audit</option>
-                        <option value="rag">Sovereign Generative AI & RAG</option>
-                        <option value="lakehouse">Modern Cloud Lakehouse Migration</option>
-                        <option value="delivery">Managed Squad (Advisory & Engineering)</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Project Outline</label>
+                      <label className="block text-2xs font-mono uppercase text-slate-500 mb-1">Project Outline *</label>
                       <textarea
                         required
                         rows={3}

@@ -6,7 +6,7 @@ export default async function handler(req:any, res:any) {
         return res.status(405).json({ error: "Method Not Allowed" });
     }
 
-    const { name, email, service, projectOutline } = req.body;
+    const { firstName, lastName, email, jobTitle, projectOutline } = req.body;
 
     const transporter = nodemailer.createTransport({
           service: "gmail",
@@ -17,8 +17,8 @@ export default async function handler(req:any, res:any) {
     });
   
 
-  if (!name || !email) {
-    return res.status(400).json({ error: "Missing required fields (name, email)" });
+  if (!firstName || !lastName || !email || !jobTitle || !projectOutline) {
+    return res.status(400).json({ error: "Missing required fields (firstName, lastName, email, jobTitle, projectOutline)" });
   }
 
   const emailHtml = `
@@ -35,15 +35,15 @@ export default async function handler(req:any, res:any) {
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
           <tr style="border-bottom: 1px solid #f1f5f9;">
             <td style="padding: 10px 0; font-weight: bold; font-size: 12px; color: #64748b; text-transform: uppercase; width: 150px;">Full Name</td>
-            <td style="padding: 10px 0; font-size: 14px; color: #0f172a;">${name}</td>
+            <td style="padding: 10px 0; font-size: 14px; color: #0f172a;">${firstName} ${lastName}</td> 
           </tr>
           <tr style="border-bottom: 1px solid #f1f5f9;">
             <td style="padding: 10px 0; font-weight: bold; font-size: 12px; color: #64748b; text-transform: uppercase;">Corporate Email</td>
             <td style="padding: 10px 0; font-size: 14px; color: #0f172a;"><a href="mailto:${email}" style="color: #2563eb; text-decoration: none;">${email}</a></td>
           </tr>
           <tr style="border-bottom: 1px solid #f1f5f9;">
-            <td style="padding: 10px 0; font-weight: bold; font-size: 12px; color: #64748b; text-transform: uppercase;">Service Target</td>
-            <td style="padding: 10px 0; font-size: 14px; color: #0f172a; font-weight: bold;">${service || "Not chosen"}</td>
+            <td style="padding: 10px 0; font-weight: bold; font-size: 12px; color: #64748b; text-transform: uppercase;">Job Title</td>
+            <td style="padding: 10px 0; font-size: 14px; color: #0f172a; font-weight: bold;">${jobTitle || "Not provided"}</td>
           </tr>
         </table>
 
@@ -61,10 +61,10 @@ export default async function handler(req:any, res:any) {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${name} (FLUMIX Quick Inquiry)" <${process.env.SENDER_USER}>`,
+        from: `"${firstName} ${lastName} (FLUMIX Quick Inquiry)" <${process.env.SENDER_USER}>`,
         to: process.env.SENDER_USER,
         replyTo: email,
-        subject: `[FLUMIX Quick Consultation] ${name}`,
+        subject: `[FLUMIX Quick Consultation] ${firstName} ${lastName} - ${jobTitle || "No Job Title Provided"}`,
         html: emailHtml,
       });
       return res.status(200).json({ success: true, message: "Quick request transmitted successfully via SMTP." });

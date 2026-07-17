@@ -13,12 +13,13 @@ interface ContactProps {
 
 export default function Contact({ setCurrentPage }: ContactProps) {
   const [formData, setFormData] = useState<ContactInquiry>({
-    name: '',
-    email: '',
+    firstname: '',
+    lastname: '',
+    jobtitle: '',
     company: '',
+    linkedin: '',
+    email: '',
     phone: '',
-    serviceInterest: 'Strategic Data Engineering Audit',
-    budget: '£25k - £50k',
     message: ''
   });
   const [isSubmitSuccess, setIsSubmitSuccess] = useState<boolean>(false);
@@ -189,16 +190,51 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                     {/* Standard details */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Your Full Name *</label>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Your First Name *</label>
                         <input
                           type="text"
                           required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder="Johnathan Smith"
+                          value={formData.firstname}
+                          onChange={(e) => setFormData({ ...formData, firstname: e.target.value })}
+                          placeholder="Johnathan"
                           className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
                         />
                       </div>
+                      <div>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Your Last Name *</label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.lastname}
+                          onChange={(e) => setFormData({ ...formData, lastname: e.target.value })}
+                          placeholder="Smith"
+                          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Your Job Title *</label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.jobtitle}
+                          onChange={(e) => setFormData({ ...formData, jobtitle: e.target.value })}
+                          placeholder="Sales Director"
+                          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">LinkedIn Profile </label>
+                        <input
+                          type="text"
+                          value={formData.linkedin}
+                          onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+                          placeholder="https://www.linkedin.com/in/johnsmith"
+                          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Corporate Email Address *</label>
                         <input
@@ -207,20 +243,6 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="jsmith@corporate.co.uk"
-                          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Company / Organization *</label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.company}
-                          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                          placeholder="Prestige Enterprise"
                           className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
                         />
                       </div>
@@ -241,57 +263,10 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                       </div>
                     </div>
 
-                    {/* Service Interest */}
-                    <div>
-                      <label className="block text-3xs font-mono uppercase text-slate-500 mb-1.5">Strategic Solution Interest</label>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {serviceOptions.map((opt) => {
-                          const isSelected = formData.serviceInterest === opt;
-                          return (
-                            <button
-                              key={opt}
-                              type="button"
-                              onClick={() => setFormData({ ...formData, serviceInterest: opt })}
-                              className={`rounded-lg border p-3 text-left transition-all duration-200 cursor-pointer text-2xs ${
-                                isSelected
-                                  ? 'border-blue-500 bg-blue-50 text-blue-600 font-bold shadow-sm'
-                                  : 'border-slate-200 bg-slate-50 text-slate-600 hover:text-slate-900 hover:bg-slate-100/50'
-                              }`}
-                            >
-                              {opt}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    {/* Budget dials */}
-                    <div>
-                      <label className="block text-3xs font-mono uppercase text-slate-500 mb-1.5">Estimated Scoping Budget</label>
-                      <div className="flex flex-wrap gap-2" id="budget-dials">
-                        {budgetOptions.map((b) => {
-                          const isSelected = formData.budget === b;
-                          return (
-                            <button
-                              key={b}
-                              type="button"
-                              onClick={() => setFormData({ ...formData, budget: b })}
-                              className={`rounded-full px-4 py-2 border text-2xs font-semibold transition-all duration-150 cursor-pointer shadow-3xs ${
-                                isSelected
-                                  ? 'bg-blue-600 border-blue-500 text-white shadow-md shadow-blue-600/15'
-                                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                              }`}
-                            >
-                              {b}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-
+                    
                     {/* Brief outline */}
                     <div>
-                      <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Brief Description of Bottlenecks *</label>
+                      <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Brief Description *</label>
                       <textarea
                         required
                         rows={4}
@@ -303,7 +278,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                     </div>
 
                     {/* Commit checklist */}
-                    <div className="rounded-xl bg-slate-50 p-4 border border-slate-200 space-y-2">
+                    <div className="rounded-xl hidden bg-slate-50 p-4 border border-slate-200 space-y-2">
                       <div className="flex items-center gap-2 text-3xs font-bold text-slate-900 uppercase tracking-wider font-mono">
                         <CheckSquare className="h-4 w-4 text-blue-600" />
                         <span>Pre-Scoping Checklist Highlights</span>
@@ -322,12 +297,12 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                       {isSubmitting ? (
                         <>
                           <RefreshCw className="h-4 w-4 animate-spin" />
-                          <span>Transmitting Blueprint Request...</span>
+                          <span>Transmitting Request...</span>
                         </>
                       ) : (
                         <>
                           <MessageSquare className="h-4 w-4" />
-                          <span>Submit Blueprint Request to Solution Architects</span>
+                          <span>Submit Request to Solution Architects</span>
                         </>
                       )}
                     </button>
