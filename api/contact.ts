@@ -30,13 +30,6 @@ export default async function handler(req: any, res: any) {
     });
   }
 
-  if(!validatePhone(phone)){
-    return res.status(400).json({
-      success: false,
-      error: "Invalid phone number",
-    });
-  }
-
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {

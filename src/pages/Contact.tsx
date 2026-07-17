@@ -211,7 +211,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         />
                       </div>
                       <div>
-                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Contact Telephone</label>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Contact Number</label>
                         <div className="flex">
                           <PhoneInput
                             name="phone"
@@ -306,7 +306,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-display text-base font-bold text-slate-900">Consultation Initiated, {formData.name}!</h3>
+                      <h3 className="font-display text-base font-bold text-slate-900">Consultation Initiated, {formData.firstname} {formData.lastname}!</h3>
                       <p className="text-xs text-slate-600 leading-relaxed max-w-sm mx-auto">
                         Your inquiry has been successfully registered at our One Canada Square strategic advisory desk.
                       </p>
