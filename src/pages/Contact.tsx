@@ -3,9 +3,6 @@ import { PageId, ContactInquiry } from '../types';
 import { Mail, Phone, MapPin, ShieldAlert, CheckSquare, Sparkles, MessageSquare, Calendar, FileCheck, ArrowRight, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { validatePhone } from '../js/dynamicphonevalidate';
-import { formatPhone } from '../js/autoformatphone';
-import { getPhoneMaxLength } from '../js/maxlength';
-import { isPhoneComplete } from '../js/isphonecomplete';
 import PhoneInput from "react-phone-input-2";
 
 interface ContactProps {

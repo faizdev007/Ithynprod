@@ -1,4 +1,4 @@
-import { validatePhone } from "@/src/js/validatePhone";
+import { validatePhone } from "@/src/components/phonevalidation";
 import nodemailer from "nodemailer";
 
 export default async function handler(req: any, res: any) {
@@ -30,7 +30,7 @@ export default async function handler(req: any, res: any) {
     });
   }
 
-  if(!validatePhone(phone).valid){
+  if(!validatePhone(phone)){
     return res.status(400).json({
       success: false,
       error: "Invalid phone number",
