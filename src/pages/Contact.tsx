@@ -22,6 +22,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
 
 
   const [isSubmitSuccess, setIsSubmitSuccess] = useState<boolean>(false);
+  const [isSubmitStatus, setIsSubmitStatus] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState(false);
@@ -217,7 +218,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                             name="phone"
                             country={"gb"}
                             value={phone}
-                            onChange={(value, country) => {
+                            onChange={(value:any, country:any) => {
                                 setFormData({ ...formData, phone: country.dailCode +'-'+ value });
                                 setFormData({
                                     ...formData,
@@ -226,7 +227,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
 
                                 setPhoneError(
                                     value.length > 0 &&
-                                    !validatePhone("+" + value)
+                                    !validatePhone(value)
                                 );
                             }}
                             enableSearch
@@ -237,10 +238,10 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                                 height: "38px",
                                 borderRadius: "8px",
                             }}
-                            inputClass={
+                            inputStyle={
                                 phoneError
-                                    ? "border-red-500"
-                                    : ""
+                                    ? { border: "1px solid #ef4444" }
+                                    : {}
                             }
                         />
                         </div>
@@ -275,7 +276,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
 
                     <button
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={isSubmitStatus || isSubmitting || phoneError}
                       className="w-full rounded-full bg-blue-600 hover:bg-blue-500 disabled:bg-slate-300 disabled:cursor-not-allowed py-3.5 text-xs font-bold text-white shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
                     >
                       {isSubmitting ? (
