@@ -54,7 +54,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
   };
 
   return (
-    <div className="relative overflow-hidden py-16 sm:py-20 bg-slate-55 text-slate-800" id="contact-page">
+    <div className="relative overflow-hidden py-16 sm:py-20 bg-slate-50 text-slate-800" id="contact-page">
       {/* Background radial accent glow */}
       <div className="absolute left-[-10%] top-20 h-[500px] w-[500px] rounded-full bg-blue-300/10 glow-blur" />
       <div className="absolute right-[-15%] bottom-10 h-[500px] w-[500px] rounded-full bg-indigo-300/10 glow-blur" />
