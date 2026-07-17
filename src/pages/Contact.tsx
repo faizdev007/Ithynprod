@@ -218,7 +218,6 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                             country={"gb"}
                             value={phone}
                             onChange={(value, country) => {
-                                console.log('Phone input changed:', country );
                                 setFormData({ ...formData, phone: country.dailCode +'-'+ value });
                                 setFormData({
                                     ...formData,
@@ -235,7 +234,8 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                             placeholder="Enter phone number"
                             inputStyle={{
                                 width: "100%",
-                                height: "42px"
+                                height: "38px",
+                                borderRadius: "8px",
                             }}
                             inputClass={
                                 phoneError
