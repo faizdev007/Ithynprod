@@ -16,7 +16,6 @@ export default function Contact({ setCurrentPage }: ContactProps) {
     firstname: '',
     lastname: '',
     jobtitle: '',
-    company: '',
     linkedin: '',
     email: '',
     phone: '',
@@ -365,12 +364,12 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         onClick={() => {
                           setIsSubmitSuccess(false);
                           setFormData({
-                            name: '',
+                            firstname: '',
+                            lastname: '',
+                            jobtitle: '',
+                            linkedin: '',
                             email: '',
-                            company: '',
                             phone: '',
-                            serviceInterest: 'Strategic Data Engineering Audit',
-                            budget: '£25k - £50k',
                             message: ''
                           });
                         }}

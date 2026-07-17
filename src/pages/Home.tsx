@@ -28,13 +28,13 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
     const payload = {
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
-      jobtitle: formData.get('jobTitle'),
       email: formData.get('email'),
+      jobTitle: formData.get('jobTitle'),
       projectOutline: formData.get('projectOutline'),
     };
 
     try {
-      const response = await fetch('/api/quick-contact', {
+      const response = await fetch('/api/quickcontact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
