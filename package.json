@@ -18,12 +18,15 @@
     "@vitejs/plugin-react": "^5.0.4",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
-    "libphonenumber-js": "^1.13.8",
+    "libphonenumber-js": "^1.13.9",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
     "nodemailer": "^9.0.3",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
+    "react-phone-input-2": "^2.15.1",
+    "react-phone-number-input": "^3.4.17",
+    "react-select-country-list": "^2.2.3",
     "vite": "^6.2.3"
   },
   "devDependencies": {

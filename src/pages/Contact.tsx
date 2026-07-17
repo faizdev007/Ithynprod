@@ -6,6 +6,7 @@ import { validatePhone } from '../js/dynamicphonevalidate';
 import { formatPhone } from '../js/autoformatphone';
 import { getPhoneMaxLength } from '../js/maxlength';
 import { isPhoneComplete } from '../js/isphonecomplete';
+import PhoneInput from "react-phone-input-2";
 
 interface ContactProps {
   setCurrentPage: (page: PageId) => void;
@@ -21,35 +22,17 @@ export default function Contact({ setCurrentPage }: ContactProps) {
     phone: '',
     message: ''
   });
+
+
   const [isSubmitSuccess, setIsSubmitSuccess] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [country, setCountry] = useState("GB");
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState(false);
 
-  const handlePhoneChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const formatted = formatPhone(e.target.value, country);
-
-    setPhone(formatted);
-    setPhoneError(
-      formatted.length > 0 && !isPhoneComplete(formatted)
-    );
-    setPhone(formatted);
-    setFormData({ ...formData, phone: formatted });
-  };
-
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!isPhoneComplete(formData.phone)) {
-      setPhoneError(true);
-      return;
-    }
-
-    setPhoneError(false);
     setIsSubmitting(true);
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -71,21 +54,6 @@ export default function Contact({ setCurrentPage }: ContactProps) {
       setIsSubmitting(false);
     }
   };
-
-  const budgetOptions = [
-    'Under £25k',
-    '£25k - £50k',
-    '£50k - £100k',
-    '£100k+'
-  ];
-
-  const serviceOptions = [
-    'Strategic Data Engineering Audit',
-    'Sovereign Generative AI & RAG',
-    'Modern Cloud Lakehouse Migration',
-    'Analytics Semantic Layer Model',
-    'Managed Squad (Advisory & Engineering)'
-  ];
 
   return (
     <div className="relative overflow-hidden py-16 sm:py-20 bg-slate-55 text-slate-800" id="contact-page">
@@ -247,18 +215,38 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                       </div>
                       <div>
                         <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Contact Telephone</label>
-                        <input
-                          type="tel"
-                          value={phone}
-                          onChange={handlePhoneChange}
-                          maxLength={getPhoneMaxLength(country)}
-                          placeholder="+44 20 7900 1234"
-                          className={`w-full rounded-lg border px-3 py-2 text-sm ${
-                            phoneError
-                              ? "border-red-500 focus:border-red-500"
-                              : "border-slate-200 focus:border-blue-500"
-                          }`}
+                        <div className="flex">
+                          <PhoneInput
+                            name="phone"
+                            country={"gb"}
+                            value={phone}
+                            onChange={(value, country) => {
+                                console.log('Phone input changed:', country );
+                                setFormData({ ...formData, phone: country.dailCode +'-'+ value });
+                                setFormData({
+                                    ...formData,
+                                    phone: "+" + value,
+                                });
+
+                                setPhoneError(
+                                    value.length > 0 &&
+                                    !validatePhone("+" + value)
+                                );
+                            }}
+                            enableSearch
+                            countryCodeEditable={false}
+                            placeholder="Enter phone number"
+                            inputStyle={{
+                                width: "100%",
+                                height: "42px"
+                            }}
+                            inputClass={
+                                phoneError
+                                    ? "border-red-500"
+                                    : ""
+                            }
                         />
+                        </div>
                       </div>
                     </div>
 
