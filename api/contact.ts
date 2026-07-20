@@ -1,4 +1,4 @@
-import { validatePhone } from "@/src/utils/phonevalidation";
+import { validatePhone } from "../utils/phonevalidation";
 import nodemailer from "nodemailer";
 
 export default async function handler(req: any, res: any) {
