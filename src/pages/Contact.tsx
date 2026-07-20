@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PageId, ContactInquiry } from '../types';
 import { Mail, Phone, MapPin, ShieldAlert, CheckSquare, Sparkles, MessageSquare, Calendar, FileCheck, ArrowRight, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { validatePhone } from '../utils/phonevalidation';
+import { validatePhone } from '../phonevalidation';
 import PhoneInput from "react-phone-input-2";
 
 interface ContactProps {
