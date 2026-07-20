@@ -225,10 +225,10 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                                     phone: "+" + value,
                                 });
 
-                                // setPhoneError(
-                                //     value.length > 0 &&
-                                //     !validatePhone(value)
-                                // );
+                                setPhoneError(
+                                    value.length > 2 &&
+                                    !validatePhone(value)
+                                );
                             }}
                             enableSearch
                             countryCodeEditable={false}
