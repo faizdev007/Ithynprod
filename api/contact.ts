@@ -1,12 +1,5 @@
 import nodemailer from "nodemailer";
 
-import { parsePhoneNumberFromString } from "libphonenumber-js";
-
-function validatePhone(phone: string): boolean {
-  const phoneNumber = parsePhoneNumberFromString("+" + phone);
-  return phoneNumber?.isValid() ?? false;
-}
-
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method Not Allowed" });
@@ -33,14 +26,6 @@ export default async function handler(req: any, res: any) {
     return res.status(400).json({
       success: false,
       error: "Missing required fields",
-    });
-  }
-
-  // Validate phone number if provided
-  if (phone && !validatePhone(phone)) {
-    return res.status(400).json({
-      success: false,
-      error: "Invalid phone number format",
     });
   }
 
