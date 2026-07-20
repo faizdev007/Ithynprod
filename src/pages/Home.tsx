@@ -454,9 +454,9 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                 'bg-purple-600'
               ];
               const textColors = [
-                'text-blue-600 dark:text-blue-400',
-                'text-indigo-600 dark:text-indigo-400',
-                'text-purple-600 dark:text-purple-400'
+                'text-blue-600',
+                'text-indigo-600',
+                'text-purple-600'
               ];
               const hoverColors = [
                 'hover:border-blue-500/30',
@@ -471,32 +471,32 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className={`flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 p-6 sm:p-8 ${hoverColors[idx % 3]} hover:bg-white dark:hover:bg-slate-900 hover:shadow-lg dark:hover:shadow-indigo-950/20 transition-all duration-300 relative overflow-hidden group`}
+                  className={`flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-8 ${hoverColors[idx % 3]} hover:bg-white hover:shadow-lg transition-all duration-300 relative overflow-hidden group`}
                 >
                   <div className={`absolute top-0 left-0 right-0 h-1 ${borderColors[idx % 3]}`} />
                   <div className="space-y-6">
                     <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-3xs font-mono font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">
+                      <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-3xs font-mono font-bold text-slate-700 uppercase tracking-wide">
                         Verified Expert
                       </span>
                       <span className="text-2xs font-mono font-semibold text-slate-500">{exp.experience} Exp</span>
                     </div>
 
                     <div>
-                      <h3 className="font-display text-base font-extrabold text-slate-900 dark:text-white leading-tight">
+                      <h3 className="font-display text-base font-extrabold text-slate-900 leading-tight">
                         {exp.name}
                       </h3>
                       <p className={`text-3xs font-mono ${textColors[idx % 3]} font-bold uppercase tracking-widest mt-1`}>
                         {exp.title}
                       </p>
-                      <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">
+                      <p className="text-[10px] text-slate-500 mt-1">
                         {exp.location}
                       </p>
                     </div>
 
                     {/* Certifications list */}
                     <div className="space-y-1.5">
-                      <h4 className="text-4xs font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center gap-1">
+                      <h4 className="text-4xs font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
                         <ShieldCheck className="h-3 w-3 text-emerald-500" />
                         <span>Verified Certifications</span>
                       </h4>
@@ -504,7 +504,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                         {exp.certifications.slice(0, 2).map((cert, i) => (
                           <span 
                             key={i} 
-                            className="inline-block px-2 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-200/50 dark:border-slate-750 text-slate-700 dark:text-slate-300 text-3xs font-medium leading-relaxed"
+                            className="inline-block px-2 py-0.5 rounded bg-white border border-slate-200/50 text-slate-700 text-3xs font-medium leading-relaxed"
                           >
                             {cert}
                           </span>
@@ -513,14 +513,14 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                     </div>
 
                     {/* Core Competencies list */}
-                    <div className="space-y-1.5 pt-2 border-t border-slate-150 dark:border-slate-800">
-                      <h4 className="text-4xs font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                    <div className="space-y-1.5 pt-2 border-t border-slate-150">
+                      <h4 className="text-4xs font-mono font-bold uppercase tracking-wider text-slate-400">
                         Core Competencies
                       </h4>
-                      <ul className="space-y-1.5 text-xs text-slate-650 dark:text-slate-300">
+                      <ul className="space-y-1.5 text-xs text-slate-650">
                         {exp.skills.slice(0, 3).map((skill, i) => (
                           <li key={i} className="flex items-start gap-1.5">
-                            <CheckCircle2 className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                            <CheckCircle2 className="h-3.5 w-3.5 text-blue-600 shrink-0 mt-0.5" />
                             <span className="leading-tight">{skill}</span>
                           </li>
                         ))}
@@ -532,7 +532,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                       {exp.techStack.slice(0, 4).map((tech) => (
                         <span 
                           key={tech} 
-                          className="inline-block px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/20 border border-blue-100/50 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 text-3xs font-mono font-bold uppercase"
+                          className="inline-block px-2 py-0.5 rounded bg-blue-50 border border-blue-100/50 text-blue-600 text-3xs font-mono font-bold uppercase"
                         >
                           {tech}
                         </span>
@@ -540,10 +540,10 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-slate-150 dark:border-slate-850">
+                  <div className="mt-8 pt-6 border-t border-slate-150">
                     <button
                       onClick={onOpenConsultation}
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white py-2.5 text-xs font-bold transition-all cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white py-2.5 text-xs font-bold transition-all cursor-pointer"
                     >
                       <span>Request Profile Portfolio</span>
                     </button>
@@ -554,20 +554,20 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
           </div>
 
           {/* Vetting Process & Hiring Trust Flags */}
-          <div className="mt-16 bg-slate-50 dark:bg-slate-900/40 rounded-2xl border border-slate-200/80 dark:border-slate-800 p-8 grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left">
+          <div className="mt-16 bg-slate-50 rounded-2xl border border-slate-200/80 p-8 grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left">
             <div className="space-y-1.5">
               <span className="block text-2xs font-mono font-bold text-blue-600 uppercase tracking-widest">01 / Rigorous Screening</span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white">Top 1% UK Technical Vetting</h4>
+              <h4 className="text-sm font-bold text-slate-900">Top 1% UK Technical Vetting</h4>
               <p className="text-3xs text-slate-500 leading-relaxed">All experts pass extreme multi-phase coding, architecture design, and direct panel reviews.</p>
             </div>
             <div className="space-y-1.5">
               <span className="block text-2xs font-mono font-bold text-blue-600 uppercase tracking-widest">02 / Seamless Onboarding</span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white">Plug-and-Play Integration</h4>
+              <h4 className="text-sm font-bold text-slate-900">Plug-and-Play Integration</h4>
               <p className="text-3xs text-slate-500 leading-relaxed">Experts embed directly within your Jira, Slack, and Github workflows with zero setup friction.</p>
             </div>
             <div className="space-y-1.5">
               <span className="block text-2xs font-mono font-bold text-blue-600 uppercase tracking-widest">03 / Full Compliance</span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white">GDPR & Security Compliant</h4>
+              <h4 className="text-sm font-bold text-slate-900">GDPR & Security Compliant</h4>
               <p className="text-3xs text-slate-500 leading-relaxed">Active UK SC clearance models and rigorous NDA guardrails are established prior to team launch.</p>
             </div>
             <div className="space-y-1.5 flex flex-col justify-center">

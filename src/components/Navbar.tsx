@@ -46,7 +46,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/85 dark:bg-[#020a26] backdrop-blur-md" id="navbar">
+    <nav className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/85 backdrop-blur-md" id="navbar">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -71,7 +71,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                       type="button"
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                       className={`relative flex items-center gap-1.5 rounded-md px-3.5 py-2 text-sm font-semibold transition-colors ${
-                        isActive ? 'text-blue-600 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                        isActive ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
                       }`}
                       id={`nav-item-${item.id}`}
                     >
@@ -82,7 +82,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                       {isActive && (
                         <motion.div
                           layoutId="activeNavIndicator"
-                          className="absolute inset-0 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60"
+                          className="absolute inset-0 rounded-md bg-slate-100 border border-slate-200/60"
                           transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                         />
                       )}
@@ -96,7 +96,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.95 }}
                           transition={{ duration: 0.15 }}
-                          className="absolute left-0 mt-1 w-64 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-2 shadow-xl z-50"
+                          className="absolute left-0 mt-1 w-64 rounded-xl border border-slate-200 bg-white p-2 shadow-xl z-50"
                         >
                           <div className="space-y-1">
                             <button
@@ -104,12 +104,12 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 handleNavClick('services');
                                 setIsDropdownOpen(false);
                               }}
-                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors ${
-                                currentPage === 'services' ? 'bg-slate-50 dark:bg-slate-850 text-blue-600 dark:text-blue-400' : ''
+                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 transition-colors ${
+                                currentPage === 'services' ? 'bg-slate-50 text-blue-600' : ''
                               }`}
                             >
                               <div>
-                                <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Data & AI</span>
+                                <span className="block font-semibold text-xs text-slate-900 font-sans">Data & AI</span>
                               </div>
                             </button>
                              <button
@@ -117,12 +117,12 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 onSelectSubService('app-services');
                                 setIsDropdownOpen(false);
                               }}
-                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors ${
-                                currentPage === 'app-services' ? 'bg-slate-50 dark:bg-slate-850 text-blue-600 dark:text-blue-400' : ''
+                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 transition-colors ${
+                                currentPage === 'app-services' ? 'bg-slate-50 text-blue-600' : ''
                               }`}
                             >
                               <div>
-                                <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Application Services</span>
+                                <span className="block font-semibold text-xs text-slate-900 font-sans">Application Services</span>
                               </div>
                             </button>
                             <button
@@ -130,12 +130,12 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 onSelectSubService('customer-bpo');
                                 setIsDropdownOpen(false);
                               }}
-                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors ${
-                                currentPage === 'customer-bpo' ? 'bg-slate-50 dark:bg-slate-850 text-blue-600 dark:text-blue-400' : ''
+                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 transition-colors ${
+                                currentPage === 'customer-bpo' ? 'bg-slate-50 text-blue-600' : ''
                               }`}
                             >
                               <div>
-                                <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Customer Service & BPO</span>
+                                <span className="block font-semibold text-xs text-slate-900 font-sans">Customer Service & BPO</span>
                               </div>
                             </button>
                             <button
@@ -143,12 +143,12 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 onSelectSubService('digital-marketing');
                                 setIsDropdownOpen(false);
                               }}
-                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors ${
-                                currentPage === 'digital-marketing' ? 'bg-slate-50 dark:bg-slate-850 text-blue-600 dark:text-blue-400' : ''
+                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 transition-colors ${
+                                currentPage === 'digital-marketing' ? 'bg-slate-50 text-blue-600' : ''
                               }`}
                             >
                               <div>
-                                <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Digital Marketing Services</span>
+                                <span className="block font-semibold text-xs text-slate-900 font-sans">Digital Marketing Services</span>
                               </div>
                             </button>
                             <button
@@ -156,12 +156,12 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 onSelectSubService('hire-experts');
                                 setIsDropdownOpen(false);
                               }}
-                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors ${
-                                currentPage === 'hire-experts' ? 'bg-slate-50 dark:bg-slate-850 text-blue-600 dark:text-blue-400' : ''
+                              className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 transition-colors ${
+                                currentPage === 'hire-experts' ? 'bg-slate-50 text-blue-600' : ''
                               }`}
                             >
                               <div>
-                                <span className="block font-semibold text-xs text-slate-900 dark:text-white font-sans">Hire Certified Experts</span>
+                                <span className="block font-semibold text-xs text-slate-900 font-sans">Hire Certified Experts</span>
                               </div>
                             </button>
                           </div>
@@ -177,7 +177,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
                   className={`relative rounded-md px-3.5 py-2 text-sm font-semibold transition-colors ${
-                    isActive ? 'text-blue-600 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                    isActive ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
                   }`}
                   id={`nav-item-${item.id}`}
                 >
@@ -185,7 +185,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute inset-0 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60"
+                      className="absolute inset-0 rounded-md bg-slate-100 border border-slate-200/60"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -198,7 +198,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
           <div className="hidden lg:flex items-center gap-4" id="nav-desktop-actions">
             <button
               onClick={toggleTheme}
-              className="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
+              className="p-2 text-slate-600 hidden hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
               aria-label="Toggle Theme"
             >
               {theme === 'dark' ? <Sun className="h-5 w-5 text-amber-500" /> : <Moon className="h-5 w-5 text-slate-600" />}
@@ -217,14 +217,14 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
           <div className="flex lg:hidden items-center gap-2" id="nav-mobile-hamburger">
             <button
               onClick={toggleTheme}
-              className="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
+              className="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
               aria-label="Toggle Theme"
             >
               {theme === 'dark' ? <Sun className="h-5 w-5 text-amber-500" /> : <Moon className="h-5 w-5 text-slate-600" />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 focus:outline-none"
               aria-expanded="false"
               id="hamburger-toggle"
             >
@@ -243,7 +243,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 lg:hidden"
+            className="border-b border-slate-200 bg-white lg:hidden"
             id="nav-mobile-drawer"
           >
             <div className="space-y-1.5 px-4 py-4 sm:px-6">
@@ -258,8 +258,8 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                         onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                         className={`flex w-full items-center justify-between rounded-md px-3 py-2.5 text-base font-semibold transition-colors ${
                           isAnyServiceActive
-                            ? 'bg-slate-50 dark:bg-slate-800 text-blue-600 dark:text-blue-450 border-l-2 border-blue-600'
-                            : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
+                            ? 'bg-slate-50 text-blue-600 border-l-2 border-blue-600'
+                            : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                         }`}
                         id={`nav-mobile-item-${item.id}`}
                       >
@@ -273,7 +273,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="pl-6 border-l border-slate-200 dark:border-slate-800 space-y-1 py-1 overflow-hidden"
+                            className="pl-6 border-l border-slate-200 space-y-1 py-1 overflow-hidden"
                           >
                             <button
                               onClick={() => {
@@ -281,7 +281,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'services' ? 'text-blue-600 dark:text-blue-450' : 'text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400'
+                                currentPage === 'services' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Data & AI
@@ -292,7 +292,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'app-services' ? 'text-blue-600 dark:text-blue-450' : 'text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400'
+                                currentPage === 'app-services' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Application Services
@@ -303,7 +303,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'customer-bpo' ? 'text-blue-600 dark:text-blue-455' : 'text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400'
+                                currentPage === 'customer-bpo' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Customer Service & BPO
@@ -314,7 +314,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'digital-marketing' ? 'text-blue-600 dark:text-blue-455' : 'text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400'
+                                currentPage === 'digital-marketing' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Digital Marketing Services
@@ -325,7 +325,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'hire-experts' ? 'text-blue-600 dark:text-blue-455' : 'text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400'
+                                currentPage === 'hire-experts' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Hire Certified Experts
@@ -343,8 +343,8 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                     onClick={() => handleNavClick(item.id)}
                     className={`flex w-full items-center rounded-md px-3 py-2.5 text-base font-semibold transition-colors ${
                       isActive
-                        ? 'bg-slate-50 dark:bg-slate-800 text-blue-600 dark:text-blue-450 border-l-2 border-blue-600'
-                        : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
+                        ? 'bg-slate-50 text-blue-600 border-l-2 border-blue-600'
+                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                     }`}
                     id={`nav-mobile-item-${item.id}`}
                   >
@@ -352,7 +352,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                   </button>
                 );
               })}
-              <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
+              <div className="pt-4 border-t border-slate-200">
                 <button
                   onClick={() => {
                     setIsOpen(false);
