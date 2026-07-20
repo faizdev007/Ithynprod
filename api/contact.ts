@@ -1,5 +1,11 @@
-import { validatePhone } from "../src/phonevalidation";
 import nodemailer from "nodemailer";
+
+import { parsePhoneNumberFromString } from "libphonenumber-js";
+
+function validatePhone(phone: string): boolean {
+  const phoneNumber = parsePhoneNumberFromString("+" + phone);
+  return phoneNumber?.isValid() ?? false;
+}
 
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
