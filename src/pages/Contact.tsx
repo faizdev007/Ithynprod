@@ -29,6 +29,19 @@ export default function Contact({ setCurrentPage }: ContactProps) {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.phone || formData.phone.trim() === "") {
+      setPhoneError(true);
+      return;
+    }
+
+    if (!validatePhone(formData.phone.replace(/^\+/, ""))) {
+      setPhoneError(true);
+      return;
+    }
+
+    setPhoneError(false);
+    
     setIsSubmitting(true);
 
     try {
@@ -80,7 +93,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
           {/* Left Column: Address, Phones, Commitments */}
           <div className="lg:col-span-5 space-y-8" id="contact-left-details">
             <div className="space-y-4">
-              <h2 className="font-display text-xl font-bold text-slate-900">Flumix Headquarters</h2>
+              <h2 className="font-display text-xl font-bold text-slate-900">Flumix Data Consulting</h2>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Our strategic advisory desk is located in London&apos;s primary tech and financial hub, coordinating globally with our engineering squads.
               </p>
@@ -103,8 +116,8 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                 <div>
                   <span className="block font-bold text-slate-900">Inquiry Gateways</span>
                   <p className="text-slate-600 mt-1 leading-relaxed">
-                    Client Scopes: <strong className="text-slate-900">inquiries@flumix.ai</strong><br />
-                    Partnership Operations: <strong className="text-slate-900">alliances@flumix.ai</strong>
+                    Client Scopes: <strong className="text-slate-900">inquiries@flumix.co.uk</strong><br />
+                    {/* Partnership Operations: <strong className="text-slate-900">alliances@flumix.co.uk</strong> */}
                   </p>
                 </div>
               </div>
@@ -128,7 +141,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                 <span>NDA & Confidentiality Statement</span>
               </div>
               <p className="text-2xs text-slate-600 leading-relaxed">
-                FLUMIX is fully insured and operates under English and Welsh corporate confidentiality statutes. Prior to discussing proprietary source schemas, patient directories, or financial transactional ledgers, our alliances desk provides structured bilateral NDAs.
+                Flumix is fully insured and operates under English and Welsh corporate confidentiality statutes. Prior to discussing proprietary source schemas, patient directories, or financial transactional ledgers, our alliances desk provides structured bilateral NDAs.
               </p>
             </div>
           </div>
@@ -148,14 +161,14 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                     className="space-y-6 text-xs"
                   >
                     <div className="space-y-1.5 border-b border-slate-200 pb-3">
-                      <h3 className="font-display text-base font-bold text-slate-900">Engagement Questionnaire</h3>
-                      <p className="text-slate-500 text-3xs">Fields marked with an asterisk are required.</p>
+                      <h3 className="font-display text-base font-bold text-slate-900">Let’s Talk!</h3>
+                      <p className="text-slate-500 text-3xs">Fill in your details and We’ll reach out to you shortly.</p>
                     </div>
 
                     {/* Standard details */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Your First Name *</label>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">First Name *</label>
                         <input
                           type="text"
                           required
@@ -166,7 +179,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         />
                       </div>
                       <div>
-                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Your Last Name *</label>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Last Name *</label>
                         <input
                           type="text"
                           required
@@ -177,7 +190,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         />
                       </div>
                       <div>
-                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Your Job Title *</label>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Job Title *</label>
                         <input
                           type="text"
                           required
@@ -212,7 +225,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         />
                       </div>
                       <div>
-                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Contact Number</label>
+                        <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Contact Number *</label>
                         <div className="flex">
                           <PhoneInput
                             name="phone"
@@ -234,15 +247,11 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                             countryCodeEditable={false}
                             placeholder="Enter phone number"
                             inputStyle={{
-                                width: "100%",
-                                height: "38px",
-                                borderRadius: "8px",
+                              width: "100%",
+                              height: "38px",
+                              borderRadius: "8px",
+                              border: phoneError ? "1px solid #ef4444" : "1px solid #d1d5db",
                             }}
-                            inputStyle={
-                                phoneError
-                                    ? { border: "1px solid #ef4444" }
-                                    : {}
-                            }
                         />
                         </div>
                       </div>
@@ -277,7 +286,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                     <button
                       type="submit"
                       disabled={isSubmitStatus || isSubmitting || phoneError}
-                      className="w-full rounded-full bg-blue-600 hover:bg-blue-500 disabled:bg-slate-300 disabled:cursor-not-allowed py-3.5 text-xs font-bold text-white shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
+                      className="w-full rounded-full bg-gray-900 hover:bg-gray-500 disabled:bg-slate-300 disabled:cursor-not-allowed py-3.5 text-xs font-bold text-white shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
@@ -368,7 +377,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                           setCurrentPage('home');
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
-                        className="rounded-full bg-blue-600 hover:bg-blue-500 px-5 py-2.5 text-xs font-bold text-white shadow-lg shadow-blue-600/15 inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                        className="rounded-full bg-gray-900 hover:bg-gray-500 px-5 py-2.5 text-xs font-bold text-white shadow-lg shadow-blue-600/15 inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                       >
                         Return to Home <ArrowRight className="h-3.5 w-3.5" />
                       </button>

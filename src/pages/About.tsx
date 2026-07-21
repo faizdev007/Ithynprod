@@ -163,7 +163,7 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
               <div className="pt-4 flex gap-4">
                 <button
                   onClick={onOpenConsultation}
-                  className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-xs font-bold transition-all shadow-lg shadow-blue-600/20 flex items-center gap-1 cursor-pointer"
+                  className="px-5 py-2.5 bg-gray-900 hover:bg-gray-500 text-white rounded-full text-xs font-bold transition-all shadow-lg shadow-blue-600/20 flex items-center gap-1 cursor-pointer"
                 >
                   Request Delivery Deck <ChevronRight className="h-4 w-4" />
                 </button>

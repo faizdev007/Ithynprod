@@ -180,7 +180,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
               >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-500"></span>
                 </span>
                 UK Strategic Advisory & Delivery Partners
               </motion.div>
@@ -215,7 +215,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
               >
                 <button
                   onClick={onOpenConsultation}
-                  className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-blue-600/15 flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-gray-900 hover:bg-gray-500 text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-blue-600/15 flex items-center gap-2 cursor-pointer"
                 >
                   Schedule a Call
                   <ArrowRight className="h-4 w-4" />
@@ -307,7 +307,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                 id={`home-service-${service.id}`}
               >
                 <div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 border border-slate-150 text-blue-600 group-hover:bg-blue-600/10 group-hover:text-blue-600 transition-colors">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 border border-slate-150 text-blue-600 group-hover:bg-gray-900/10 group-hover:text-blue-600 transition-colors">
                     {getServiceIcon(service.iconName)}
                   </div>
                   <h3 className="mt-5 font-display text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -427,7 +427,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
 
       {/* Hire an Expert Section */}
       <section className="relative py-24 bg-white border-t border-slate-200" id="hire-expert-section">
-        <div className="absolute left-[-15%] top-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/5 glow-blur pointer-events-none" />
+        <div className="absolute left-[-15%] top-1/4 h-[400px] w-[400px] rounded-full bg-gray-500/5 glow-blur pointer-events-none" />
         <div className="absolute right-[-15%] bottom-1/4 h-[400px] w-[400px] rounded-full bg-indigo-500/5 glow-blur pointer-events-none" />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -449,7 +449,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8" id="expert-profiles-grid">
             {EXPERTS.slice(0, 3).map((exp, idx) => {
               const borderColors = [
-                'bg-blue-600',
+                'bg-gray-900',
                 'bg-indigo-600',
                 'bg-purple-600'
               ];
@@ -573,7 +573,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
             <div className="space-y-1.5 flex flex-col justify-center">
               <button
                 onClick={() => setCurrentPage('hire-experts')}
-                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-3.5 px-4 rounded-full transition-all shadow-md shadow-blue-600/10 cursor-pointer text-center flex items-center justify-center gap-1.5"
+                className="w-full bg-gray-900 hover:bg-gray-500 text-white font-bold text-xs py-3.5 px-4 rounded-full transition-all shadow-md shadow-blue-600/10 cursor-pointer text-center flex items-center justify-center gap-1.5"
               >
                 <span>Browse All Certified Experts</span>
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -661,7 +661,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                 <div className="mt-4 border-t border-slate-100 pt-3 text-xs font-semibold text-blue-600">1-2 Week Scopes</div>
               </div>
               <div className="rounded-2xl border border-blue-200 bg-blue-50/50 p-5 text-left relative hover:shadow-md transition-all">
-                <div className="absolute right-2 top-2 rounded-full bg-blue-600 text-white px-2.5 py-0.5 text-[8px] font-bold uppercase tracking-wider">Most Needed</div>
+                <div className="absolute right-2 top-2 rounded-full bg-gray-900 text-white px-2.5 py-0.5 text-[8px] font-bold uppercase tracking-wider">Most Needed</div>
                 <span className="text-2xs font-mono font-bold text-blue-600 uppercase tracking-widest">Execution</span>
                 <h4 className="font-display text-base font-bold text-slate-900 mt-1">Managed Squad</h4>
                 <p className="text-3xs text-slate-500 mt-1 leading-relaxed">FLUMIX architecture oversight + dedicated engineering sprint pods.</p>
@@ -678,7 +678,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
             <div className="pt-4 flex flex-wrap justify-center gap-4">
               <button
                 onClick={onOpenConsultation}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-blue-600/15 cursor-pointer"
+                className="px-6 py-3 bg-gray-900 hover:bg-gray-500 text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-blue-600/15 cursor-pointer"
               >
                 Schedule Budget Mapping
               </button>
@@ -755,11 +755,11 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
               </p>
               <div className="space-y-2 pt-2 text-xs text-slate-500">
                 <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-gray-500" />
                   <span>Confidential NDAs provided prior to any project reviews.</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-gray-500" />
                   <span>Sovereign deployment models supported.</span>
                 </div>
               </div>
@@ -845,7 +845,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-full text-sm font-semibold shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
+                      className="w-full py-3.5 bg-gray-900 hover:bg-gray-500 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-full text-sm font-semibold shadow-lg shadow-blue-600/15 flex items-center justify-center gap-2 transition-all cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>

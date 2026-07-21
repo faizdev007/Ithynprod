@@ -55,7 +55,7 @@ export default function Services({ setCurrentPage, onOpenConsultation }: Service
             onClick={() => setSelectedCategory('all')}
             className={`rounded-full px-5 py-2.5 text-xs font-semibold border transition-all cursor-pointer shadow-sm ${
               selectedCategory === 'all'
-                ? 'bg-blue-600 border-blue-500 text-white shadow-md shadow-blue-600/15'
+                ? 'bg-gray-900 border-blue-500 text-white shadow-md shadow-blue-600/15'
                 : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300'
             }`}
           >
@@ -67,7 +67,7 @@ export default function Services({ setCurrentPage, onOpenConsultation }: Service
               onClick={() => setSelectedCategory(s.id)}
               className={`rounded-full px-5 py-2.5 text-xs font-semibold border transition-all cursor-pointer shadow-sm ${
                 selectedCategory === s.id
-                  ? 'bg-blue-600 border-blue-500 text-white shadow-md shadow-blue-600/15'
+                  ? 'bg-gray-900 border-blue-500 text-white shadow-md shadow-blue-600/15'
                   : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300'
               }`}
             >
@@ -143,7 +143,7 @@ export default function Services({ setCurrentPage, onOpenConsultation }: Service
                       <ul className="space-y-2 text-xs text-slate-600">
                         {service.deliverables.map((del, dIdx) => (
                           <li key={dIdx} className="flex items-center gap-2">
-                            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 shrink-0" />
+                            <div className="h-1.5 w-1.5 rounded-full bg-gray-900 shrink-0" />
                             <span>{del}</span>
                           </li>
                         ))}
@@ -172,7 +172,7 @@ export default function Services({ setCurrentPage, onOpenConsultation }: Service
 
                   <button
                     onClick={onOpenConsultation}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-500 px-5 py-2.5 text-xs font-bold text-white transition-all shadow-md shadow-blue-600/15 cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gray-900 hover:bg-gray-500 px-5 py-2.5 text-xs font-bold text-white transition-all shadow-md shadow-blue-600/15 cursor-pointer"
                   >
                     <span>Inquire for {service.title.split(' (')[0]} scope</span>
                     <ArrowRight className="h-3.5 w-3.5 text-white" />

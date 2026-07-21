@@ -144,7 +144,7 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
                 onClick={() => setSelectedTech(tech)}
                 className={`rounded-full px-4 py-2 text-xs font-semibold border transition-all cursor-pointer shadow-sm ${
                   selectedTech === tech
-                    ? 'bg-blue-600 border-blue-500 text-white shadow-md shadow-blue-600/20'
+                    ? 'bg-gray-900 border-blue-500 text-white shadow-md shadow-blue-600/20'
                     : 'bg-white border-slate-200 text-slate-650 hover:border-slate-300'
                 }`}
               >
@@ -466,7 +466,7 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
                   <button
                     type="submit"
                     disabled={totalSquadSize === 0 || isSubmitting}
-                    className="w-full inline-flex items-center justify-center gap-1.5 bg-blue-650 hover:bg-blue-600 disabled:bg-slate-300 disabled:text-slate-400 disabled:cursor-not-allowed py-2.5 rounded-xl text-xs font-bold text-white shadow transition-all cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-1.5 bg-blue-650 hover:bg-gray-900 disabled:bg-slate-300 disabled:text-slate-400 disabled:cursor-not-allowed py-2.5 rounded-xl text-xs font-bold text-white shadow transition-all cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>

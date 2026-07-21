@@ -55,7 +55,7 @@ export default function TechEcosystem() {
                 onClick={() => setFilterCategory(cat)}
                 className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 cursor-pointer ${
                   isSelected
-                    ? 'bg-blue-600 text-white shadow-sm border border-blue-500/30'
+                    ? 'bg-gray-900 text-white shadow-sm border border-blue-500/30'
                     : 'bg-white text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-slate-100'
                 }`}
                 id={`tech-pill-${cat.toLowerCase().replace(/\s+/g, '-')}`}

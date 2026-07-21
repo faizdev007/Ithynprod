@@ -465,68 +465,268 @@ export const JOB_OPENINGS: JobOpening[] = [
 
 export const EXPERTS: ExpertProfile[] = [
   {
-    id: 'exp-1',
-    name: 'Dr. Evelyn Carter',
-    title: 'Principal AI Architect & LLM Engineer',
-    experience: '12+ Years',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150',
-    location: 'London, UK (Hybrid)',
-    certifications: ['AWS Certified Machine Learning', 'Google Cloud Professional ML Engineer', 'NVIDIA Deep Learning Certified'],
-    skills: ['RAG Pipeline Engineering', 'Multi-Agent Orchestration', 'LLM Fine-Tuning', 'Vector Databases (Milvus, pgvector)', 'Cognitive Systems'],
-    availability: 'Immediate',
-    hourlyRateEst: '£165/hr',
-    techStack: ['OpenAI', 'Anthropic', 'LangChain', 'LlamaIndex', 'Python', 'PostgreSQL', 'AWS']
+    id: "exp-1",
+    name: "Aisha Khan",
+    title: "Python Developer",
+    experience: "6+ Years",
+    avatar: "assets/developer/Aisha.webp",
+    location: "Remote",
+    certifications: [
+      "Python Professional",
+      "FastAPI Certified",
+      "Django Developer"
+    ],
+    skills: [
+      "Python",
+      "Django",
+      "FastAPI"
+    ],
+    availability: "Immediate",
+    hourlyRateEst: "£85/hr",
+    techStack: [
+      "Python",
+      "Django",
+      "FastAPI"
+    ]
   },
   {
-    id: 'exp-2',
-    name: 'James Henderson',
-    title: 'Senior Data Platform Architect',
-    experience: '9 Years',
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150',
-    location: 'London, UK (Hybrid)',
-    certifications: ['Databricks Solutions Architect Champion', 'Snowflake Certified Elite Architect', 'dbt Analytics Engineering Certification'],
-    skills: ['Modern Lakehouse Design', 'dbt Semantic Modeling', 'High-volume ETL/ELT pipelines', 'Apache Spark compute optimization'],
-    availability: '1 Week',
-    hourlyRateEst: '£145/hr',
-    techStack: ['Databricks', 'Snowflake', 'dbt', 'Apache Spark', 'Airflow', 'AWS', 'Python']
+    id: "exp-2",
+    name: "Alexander Roy",
+    title: "Java Developer",
+    experience: "8+ Years",
+    avatar: "assets/developer/Alexander.webp",
+    location: "Remote",
+    certifications: [
+      "Oracle Java Professional",
+      "Spring Boot Certified"
+    ],
+    skills: [
+      "Java",
+      "Spring Boot",
+      "Microservices"
+    ],
+    availability: "1 Week",
+    hourlyRateEst: "£95/hr",
+    techStack: [
+      "Java",
+      "Spring Boot",
+      "Microservices"
+    ]
   },
   {
-    id: 'exp-3',
-    name: 'Rajesh Nair',
-    title: 'Lead MLOps & Cloud Infrastructure Specialist',
-    experience: '10 Years',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150',
-    location: 'Manchester, UK (Remote)',
-    certifications: ['Kubernetes Administrator (CKA)', 'Google Cloud Professional Cloud Architect', 'Terraform Certified Associate'],
-    skills: ['Kubeflow & MLflow systems', 'CI/CD Pipeline Automation', 'Infrastructure-as-Code (IaC)', 'Sovereign private tenant hardening'],
-    availability: '2 Weeks',
-    hourlyRateEst: '£135/hr',
-    techStack: ['Google Cloud', 'AWS', 'Kubernetes', 'MLflow', 'Terraform', 'PostgreSQL', 'Python']
+    id: "exp-3",
+    name: "Arjun Mehta",
+    title: "React Js Developer",
+    experience: "5+ Years",
+    avatar: "assets/developer/Arjun.webp",
+    location: "Remote",
+    certifications: [
+      "React Professional",
+      "TypeScript Certified"
+    ],
+    skills: [
+      "React JS",
+      "Next.js",
+      "TypeScript"
+    ],
+    availability: "Immediate",
+    hourlyRateEst: "£80/hr",
+    techStack: [
+      "React JS",
+      "Next.js",
+      "TypeScript"
+    ]
   },
   {
-    id: 'exp-4',
-    name: 'Sophia Sterling',
-    title: 'Lead Analytics Engineer & BI Consultant',
-    experience: '7 Years',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150',
-    location: 'London, UK (Hybrid)',
-    certifications: ['Snowflake SnowPro Core Certified', 'Looker Certified LookML Developer', 'PowerBI Certified Professional'],
-    skills: ['Enterprise-grade semantic layouts', 'Cohort and Churn Analytics', 'Executive Dashboard design', 'dbt Core and dbt Cloud workflows'],
-    availability: 'Immediate',
-    hourlyRateEst: '£115/hr',
-    techStack: ['Snowflake', 'dbt', 'Looker', 'PowerBI', 'PostgreSQL', 'Airflow', 'Python']
+    id: "exp-4",
+    name: "Rahul",
+    title: "Go Lang Developer",
+    experience: "7+ Years",
+    avatar: "assets/developer/dev5.webp",
+    location: "Remote",
+    certifications: [
+      "Docker Associate",
+      "CKA"
+    ],
+    skills: [
+      "Go Lang",
+      "Docker",
+      "Kubernetes"
+    ],
+    availability: "2 Weeks",
+    hourlyRateEst: "£100/hr",
+    techStack: [
+      "Go Lang",
+      "Docker",
+      "Kubernetes"
+    ]
   },
   {
-    id: 'exp-5',
-    name: 'Markus Vance',
-    title: 'Senior Big Data & Real-time Streaming Engineer',
-    experience: '8 Years',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150',
-    location: 'Bristol, UK (Remote)',
-    certifications: ['Confluent Certified Developer for Apache Kafka', 'Databricks Certified Data Engineer Professional'],
-    skills: ['Real-time Event Streaming', 'Schema Registry Governance', 'Change-Data-Capture (CDC)', 'Apache Flink Stream processing'],
-    availability: '4 Weeks',
-    hourlyRateEst: '£140/hr',
-    techStack: ['Apache Kafka', 'Databricks', 'Apache Spark', 'AWS', 'Python', 'PostgreSQL', 'Terraform']
+    id: "exp-5",
+    name: "Ella Thomas",
+    title: "JavaScript Developer",
+    experience: "6+ Years",
+    avatar: "assets/developer/Ella.webp",
+    location: "Hybrid",
+    certifications: [
+      "JavaScript Professional",
+      "React Certified"
+    ],
+    skills: [
+      "JavaScript",
+      "React",
+      "Tailwind"
+    ],
+    availability: "Immediate",
+    hourlyRateEst: "£85/hr",
+    techStack: [
+      "JavaScript",
+      "React",
+      "Tailwind"
+    ]
+  },
+  {
+    id: "exp-6",
+    name: "Jose Martinez",
+    title: "Python Developer",
+    experience: "9+ Years",
+    avatar: "assets/developer/Jose.webp",
+    location: "Remote",
+    certifications: [
+      "Machine Learning Professional",
+      "Python Expert"
+    ],
+    skills: [
+      "Python",
+      "AI",
+      "Machine Learning"
+    ],
+    availability: "Immediate",
+    hourlyRateEst: "£105/hr",
+    techStack: [
+      "Python",
+      "AI",
+      "Machine Learning"
+    ]
+  },
+  {
+    id: "exp-7",
+    name: "Karthik Reddy",
+    title: "Java Developer",
+    experience: "8+ Years",
+    avatar: "assets/developer/Karthik.webp",
+    location: "Hybrid",
+    certifications: [
+      "Oracle Java Professional",
+      "Spring Certified"
+    ],
+    skills: [
+      "Java",
+      "Spring",
+      "Kafka"
+    ],
+    availability: "1 Week",
+    hourlyRateEst: "£95/hr",
+    techStack: [
+      "Java",
+      "Spring",
+      "Kafka"
+    ]
+  },
+  {
+    id: "exp-8",
+    name: "Preeda Nair",
+    title: "Python Developer",
+    experience: "6+ Years",
+    avatar: "assets/developer/Preeda.webp",
+    location: "Remote",
+    certifications: [
+      "PostgreSQL Certified",
+      "Flask Professional"
+    ],
+    skills: [
+      "Python",
+      "Flask",
+      "PostgreSQL"
+    ],
+    availability: "Immediate",
+    hourlyRateEst: "£90/hr",
+    techStack: [
+      "Python",
+      "Flask",
+      "PostgreSQL"
+    ]
+  },
+  {
+    id: "exp-9",
+    name: "Renu Sharma",
+    title: "JavaScript Developer",
+    experience: "7+ Years",
+    avatar: "assets/developer/Renu.webp",
+    location: "Hybrid",
+    certifications: [
+      "Node.js Certified",
+      "Vue.js Professional"
+    ],
+    skills: [
+      "JavaScript",
+      "Vue.js",
+      "Node.js"
+    ],
+    availability: "2 Weeks",
+    hourlyRateEst: "£90/hr",
+    techStack: [
+      "JavaScript",
+      "Vue.js",
+      "Node.js"
+    ]
+  },
+  {
+    id: "exp-10",
+    name: "Sofia Khan",
+    title: "React Js Developer",
+    experience: "5+ Years",
+    avatar: "assets/developer/Sofia.webp",
+    location: "Remote",
+    certifications: [
+      "React Professional",
+      "GraphQL Certified"
+    ],
+    skills: [
+      "React JS",
+      "Next.js",
+      "GraphQL"
+    ],
+    availability: "Immediate",
+    hourlyRateEst: "£80/hr",
+    techStack: [
+      "React JS",
+      "Next.js",
+      "GraphQL"
+    ]
+  },
+  {
+    id: "exp-11",
+    name: "Tanvi Kapoor",
+    title: "Java Developer",
+    experience: "8+ Years",
+    avatar: "assets/developer/Tanvi.webp",
+    location: "Hybrid",
+    certifications: [
+      "Oracle Java Professional",
+      "AWS Certified Developer"
+    ],
+    skills: [
+      "Java",
+      "Spring Boot",
+      "AWS"
+    ],
+    availability: "1 Week",
+    hourlyRateEst: "£95/hr",
+    techStack: [
+      "Java",
+      "Spring Boot",
+      "AWS"
+    ]
   }
 ];

@@ -57,10 +57,10 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           {/* Brand Info */}
           <div className="space-y-4" id="footer-brand">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')}>
-              <img src="/assets/logo/logolight.webp" alt="FLUMIX Logo" className="h-16 w-auto" />
+              <img src="/assets/logo/logonew2.webp" alt="FLUMIX Logo" className="h-16 w-auto" />
             </div>
             <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
-              Sovereign B2B advisory and engineered delivery partnerships, optimizing data workflows and cloud architectures across the United Kingdom.
+              B2B advisory and engineered delivery partnerships, optimizing data workflows and cloud architectures across the United Kingdom.
             </p>
           </div>
 
@@ -79,7 +79,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                 <li key={link.id}>
                   <button
                     onClick={() => handleNavClick(link.id as PageId)}
-                    className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-1 group cursor-pointer"
+                    className="text-slate-600 hover:text-gray-600 transition-colors flex items-center gap-1 group cursor-pointer"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -94,15 +94,15 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             <h3 className="font-display text-sm font-bold uppercase tracking-wider text-slate-900">Contact Information</h3>
             <div className="space-y-2 pt-2 text-xs text-slate-600">
               <div className="flex items-center gap-2">
-                <Building className="h-4 w-4 text-blue-600 shrink-0" />
+                <Building className="h-4 w-4 text-gray-600 shrink-0" />
                 <span>Kemp House, 160 City Road,  London, EC1V 2NX</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-blue-600 shrink-0" />
-                <span>inquiries@flumix.ai</span>
+                <Mail className="h-4 w-4 text-gray-600 shrink-0" />
+                <span>inquiries@flumix.co.uk</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-blue-600 shrink-0" />
+                <Phone className="h-4 w-4 text-gray-600 shrink-0" />
                 <span>+44 77  3435  4500</span>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             <h3 className="font-display text-sm font-bold uppercase tracking-wider text-slate-900">Delivery Ecosystem</h3>
             <div className="rounded-xl border border-slate-200 bg-white/80 p-4 shadow-sm">
               <div className="flex items-center gap-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded bg-blue-50 text-xs font-mono font-bold text-blue-600 border border-blue-100">
+                <div className="flex h-7 w-7 items-center justify-center rounded bg-blue-50 text-xs font-mono font-bold text-gray-600 border border-blue-100">
                   ITN
                 </div>
                 <span className="text-xs font-bold tracking-wider text-slate-900">Implementation Unit</span>
@@ -127,7 +127,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                   e.preventDefault();
                   handleNavClick('about');
                 }}
-                className="mt-3 inline-flex items-center gap-1 text-xs text-blue-600 hover:underline cursor-pointer"
+                className="mt-3 inline-flex items-center gap-1 text-xs text-gray-600 hover:underline cursor-pointer"
               >
                 Learn about our delivery model <ExternalLink className="h-3 w-3" />
               </a>
@@ -141,7 +141,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               Receive our bi-weekly publication addressing Apache Iceberg metadata trends, safe Generative AI enterprise frameworks, and dbt modeling.
             </p>
              {subscribed ? (
-              <div className="flex items-center gap-2 p-3 rounded-lg border border-blue-500/20 bg-blue-500/5 text-blue-600 text-xs animate-fadeIn">
+              <div className="flex items-center gap-2 p-3 rounded-lg border border-blue-500/20 bg-blue-500/5 text-gray-600 text-xs animate-fadeIn">
                 <CheckCircle2 className="h-4 w-4 shrink-0" />
                 <span>Successfully subscribed with your corporate email.</span>
               </div>
@@ -160,7 +160,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full rounded-lg bg-blue-600 hover:bg-blue-500 disabled:bg-slate-300 disabled:cursor-not-allowed py-2.5 text-xs font-bold text-white shadow-md transition-all shadow-blue-600/10 cursor-pointer flex items-center justify-center gap-1.5"
+                  className="w-full rounded-lg bg-gray-900 hover:bg-gray-500 disabled:bg-slate-300 disabled:cursor-not-allowed py-2.5 text-xs font-bold text-white shadow-md transition-all shadow-blue-600/10 cursor-pointer flex items-center justify-center gap-1.5"
                 >
                   {isSubmitting ? (
                     <>
@@ -178,7 +178,8 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
         {/* Bottom Panel */}
         <div className="mt-12 border-t border-slate-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500" id="footer-bottom">
-          <p>© {currentYear} FLUMIX Data & AI Ltd. All rights reserved. Registered in England & Wales.</p>
+          <p>© {currentYear} Flumix Data Consulting Ltd. All rights reserved.</p>
+          <p>Registered in England & Wales.</p>
           <div className="flex gap-6">
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Privacy Policy</a>
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-700">Terms of Service</a>

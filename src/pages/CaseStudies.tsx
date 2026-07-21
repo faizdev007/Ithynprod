@@ -180,7 +180,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
                           </button>
                           <button
                             onClick={onOpenConsultation}
-                            className="rounded-full bg-blue-600 px-4 py-2 text-2xs font-bold text-white hover:bg-blue-500 transition-all cursor-pointer shadow-sm"
+                            className="rounded-full bg-gray-900 px-4 py-2 text-2xs font-bold text-white hover:bg-gray-500 transition-all cursor-pointer shadow-sm"
                           >
                             Book similar project
                           </button>
@@ -220,7 +220,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
           <div className="pt-2">
             <button
               onClick={onOpenConsultation}
-              className="rounded-full bg-blue-600 hover:bg-blue-500 px-6 py-3 text-xs font-bold text-white shadow-lg shadow-blue-600/20 inline-flex items-center gap-1.5 transition-all cursor-pointer"
+              className="rounded-full bg-gray-900 hover:bg-gray-500 px-6 py-3 text-xs font-bold text-white shadow-lg shadow-blue-600/20 inline-flex items-center gap-1.5 transition-all cursor-pointer"
             >
               <span>Schedule Free Advisory Mapping</span>
               <ArrowRight className="h-4 w-4" />

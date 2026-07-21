@@ -51,7 +51,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')} id="nav-logo">
-            <img src="/assets/logo/logolight.webp" alt="FLUMIX Logo" className="h-16 w-auto" />
+            <img src="/assets/logo/logonew2.webp" alt="FLUMIX Logo" className="h-16 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
@@ -71,7 +71,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                       type="button"
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                       className={`relative flex items-center gap-1.5 rounded-md px-3.5 py-2 text-sm font-semibold transition-colors ${
-                        isActive ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
+                        isActive ? 'text-gray-600' : 'text-slate-600 hover:text-slate-900'
                       }`}
                       id={`nav-item-${item.id}`}
                     >
@@ -205,7 +205,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
             </button>
             <button
               onClick={scrollToContact}
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-blue-600/10 flex items-center gap-1.5 cursor-pointer"
+              className="px-5 py-2.5 bg-gray-900 hover:bg-gray-500 text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-blue-600/10 flex items-center gap-1.5 cursor-pointer"
               id="nav-consultation-btn"
             >
               Schedule a Call
@@ -215,13 +215,13 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
 
           {/* Mobile menu button */}
           <div className="flex lg:hidden items-center gap-2" id="nav-mobile-hamburger">
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
               aria-label="Toggle Theme"
             >
               {theme === 'dark' ? <Sun className="h-5 w-5 text-amber-500" /> : <Moon className="h-5 w-5 text-slate-600" />}
-            </button>
+            </button> */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 focus:outline-none"
@@ -358,7 +358,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                     setIsOpen(false);
                     onOpenConsultation();
                   }}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 py-3 text-base font-bold text-white shadow-md hover:bg-blue-500 transition-all cursor-pointer"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gray-900 py-3 text-base font-bold text-white shadow-md hover:bg-gray-500 transition-all cursor-pointer"
                   id="nav-mobile-consultation-btn"
                 >
                   <Sparkles className="h-5 w-5 text-blue-200" />
