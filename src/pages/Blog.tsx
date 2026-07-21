@@ -128,7 +128,7 @@ export default function Blog({ setCurrentPage }: BlogProps) {
                         </div>
 
                         {/* Title */}
-                        <h3 className="font-display text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                        <h3 className="font-display text-base font-bold text-slate-900 group-hover:text-gray-500 transition-colors duration-300 line-clamp-2">
                           {post.title}
                         </h3>
 

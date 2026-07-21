@@ -105,7 +105,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsDropdownOpen(false);
                               }}
                               className={`flex w-full items-center rounded-lg px-3 py-2 text-left hover:bg-slate-50 transition-colors ${
-                                currentPage === 'services' ? 'bg-slate-50 text-blue-600' : ''
+                                currentPage === 'services' ? 'bg-slate-50 text-gray-600' : ''
                               }`}
                             >
                               <div>
@@ -177,7 +177,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
                   className={`relative rounded-md px-3.5 py-2 text-sm font-semibold transition-colors ${
-                    isActive ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
+                    isActive ? 'text-gray-900' : 'text-slate-600 hover:text-slate-900'
                   }`}
                   id={`nav-item-${item.id}`}
                 >
@@ -258,7 +258,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                         onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                         className={`flex w-full items-center justify-between rounded-md px-3 py-2.5 text-base font-semibold transition-colors ${
                           isAnyServiceActive
-                            ? 'bg-slate-50 text-blue-600 border-l-2 border-blue-600'
+                            ? 'bg-slate-50 text-gray-600 border-l-2 border-gray-600'
                             : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                         }`}
                         id={`nav-mobile-item-${item.id}`}
@@ -281,7 +281,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'services' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
+                                currentPage === 'services' ? 'text-gray-900' : 'text-slate-500 hover:text-gray-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Data & AI
@@ -292,7 +292,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'app-services' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
+                                currentPage === 'app-services' ? 'text-gray-900' : 'text-slate-500 hover:text-gray-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Application Services
@@ -303,7 +303,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'customer-bpo' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
+                                currentPage === 'customer-bpo' ? 'text-gray-900' : 'text-slate-500 hover:text-gray-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Customer Service & BPO
@@ -314,7 +314,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'digital-marketing' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
+                                currentPage === 'digital-marketing' ? 'text-gray-900' : 'text-slate-500 hover:text-gray-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Digital Marketing Services
@@ -325,7 +325,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                                 setIsOpen(false);
                               }}
                               className={`flex w-full items-center py-2 text-sm font-semibold transition-colors ${
-                                currentPage === 'hire-experts' ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'
+                                currentPage === 'hire-experts' ? 'text-gray-900' : 'text-slate-500 hover:text-gray-600'
                               }`}
                             >
                               &bull;&nbsp;&nbsp;Hire Certified Experts
@@ -343,7 +343,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
                     onClick={() => handleNavClick(item.id)}
                     className={`flex w-full items-center rounded-md px-3 py-2.5 text-base font-semibold transition-colors ${
                       isActive
-                        ? 'bg-slate-50 text-blue-600 border-l-2 border-blue-600'
+                        ? 'bg-slate-50 text-gray-900 border-l-2 border-gray-600'
                         : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                     }`}
                     id={`nav-mobile-item-${item.id}`}

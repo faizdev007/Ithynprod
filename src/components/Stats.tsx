@@ -28,7 +28,7 @@ export default function Stats() {
                 <div className="absolute right-0 top-0 h-[2px] w-0 bg-gradient-to-r from-blue-400 to-indigo-500 transition-all duration-300 group-hover:w-full rounded-t-2xl" />
                 
                 <div className={`font-display text-4xl lg:text-5xl font-extrabold tracking-tight transition-colors duration-300 ${
-                  isHighlight ? 'text-slate-900' : 'text-slate-900 group-hover:text-blue-600'
+                  isHighlight ? 'text-slate-900' : 'text-slate-900 group-hover:text-gray-500'
                 }`}>
                   {metric.value}
                 </div>

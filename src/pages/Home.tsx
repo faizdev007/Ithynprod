@@ -307,10 +307,10 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                 id={`home-service-${service.id}`}
               >
                 <div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 border border-slate-150 text-blue-600 group-hover:bg-gray-900/10 group-hover:text-blue-600 transition-colors">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 border border-slate-150 text-blue-600 group-hover:bg-gray-900/10 group-hover:text-gray-500 transition-colors">
                     {getServiceIcon(service.iconName)}
                   </div>
-                  <h3 className="mt-5 font-display text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="mt-5 font-display text-lg font-bold text-slate-900 group-hover:text-gray-500 transition-colors">
                     {service.title}
                   </h3>
                   <p className="mt-2.5 text-xs text-slate-600 leading-relaxed">
@@ -384,7 +384,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                     <span className="text-blue-600 font-bold uppercase tracking-wider">{study.client}</span>
                   </div>
                   
-                  <h3 className="mt-4 font-display text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="mt-4 font-display text-base font-bold text-slate-900 group-hover:text-gray-500 transition-colors">
                     {study.title}
                   </h3>
                   <p className="mt-2.5 text-xs text-slate-600 leading-relaxed line-clamp-3">
@@ -723,7 +723,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                     <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {post.date}</span>
                     <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime}</span>
                   </div>
-                  <h3 className="mt-3 font-display text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                  <h3 className="mt-3 font-display text-sm font-bold text-slate-900 group-hover:text-gray-500 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   <p className="mt-2 text-xs text-slate-600 line-clamp-2 leading-relaxed">
