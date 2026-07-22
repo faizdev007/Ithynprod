@@ -22,6 +22,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'services', label: 'Services' },
+    { id: 'fixed-packages', label: 'Fixed Packages' },
     { id: 'case-studies', label: 'Case Studies' },
     // { id: 'blog', label: 'Blog' },
     { id: 'contact', label: 'Contact' },

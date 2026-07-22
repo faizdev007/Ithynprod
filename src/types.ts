@@ -2,7 +2,7 @@
  * Shared Type Declarations for Vertex Data & AI
  */
 
-export type PageId = 'home' | 'about' | 'services' | 'app-services' | 'customer-bpo' | 'digital-marketing' | 'hire-experts' | 'case-studies' | 'blog' | 'contact';
+export type PageId = 'home' | 'about' | 'services' | 'fixed-packages' | 'app-services' | 'customer-bpo' | 'digital-marketing' | 'hire-experts' | 'case-studies' | 'blog' | 'contact';
 
 export interface Service {
   id: string;

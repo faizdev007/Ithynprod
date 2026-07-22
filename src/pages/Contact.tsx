@@ -83,7 +83,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
             Book Strategic Consultation
           </h1>
           <p className="text-base text-slate-600 leading-relaxed">
-            Initialize your target state mapping. Our Central London solution architects provide structured platform reviews and present custom pipeline blueprints for qualified organizations.
+            Initialize your target state mapping. Our architects provide structured platform reviews and present custom pipeline blueprints for qualified organizations.
           </p>
         </div>
 
@@ -226,7 +226,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                       </div>
                       <div>
                         <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Contact Number *</label>
-                        <div className="flex">
+                        <div className="flex flex-col">
                           <PhoneInput
                             name="phone"
                             country={"gb"}
@@ -253,6 +253,11 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                               border: phoneError ? "1px solid #ef4444" : "1px solid #d1d5db",
                             }}
                         />
+                        {phoneError && (
+                          <span className="text-red-500 text-3xs">
+                            Please provide a valid phone number.
+                          </span>)
+                        }
                         </div>
                       </div>
                     </div>
@@ -266,7 +271,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Please detail your storage formats, pipeline orchestrations (Airflow, spark clusters), or cognitive RAG compliance specifications..."
+                        placeholder="Describe your data infrastructure or AI requirements....."
                         className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
                       />
                     </div>
@@ -296,7 +301,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                       ) : (
                         <>
                           <MessageSquare className="h-4 w-4" />
-                          <span>Submit Request to Solution Architects</span>
+                          <span>Submit Request</span>
                         </>
                       )}
                     </button>
@@ -318,60 +323,11 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                     <div className="space-y-2">
                       <h3 className="font-display text-base font-bold text-slate-900">Consultation Initiated, {formData.firstname} {formData.lastname}!</h3>
                       <p className="text-xs text-slate-600 leading-relaxed max-w-sm mx-auto">
-                        Your inquiry has been successfully registered at our One Canada Square strategic advisory desk.
+                        Your inquiry has been successfully registered at our strategic advisory desk.
                       </p>
                     </div>
 
-                    {/* Encryption & Calendar Simulation */}
-                    <div className="rounded-xl hidden border border-slate-200 bg-slate-50 p-5 text-left font-mono text-[10px] text-slate-600 space-y-4 max-w-sm mx-auto shadow-3xs">
-                      
-                      {/* NDA Status */}
-                      <div className="flex items-start gap-3 border-b border-slate-200 pb-3">
-                        <FileCheck className="h-5 w-5 text-blue-600 shrink-0" />
-                        <div>
-                          <span className="block font-bold text-slate-900 uppercase tracking-wider text-3xs">Stage 1: Bilateral NDA</span>
-                          <p className="text-slate-550 mt-0.5 leading-relaxed">
-                            Bilateral NDA generated. Secure DocuSign package dispatched to <strong className="text-slate-900">{formData.email}</strong>.
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Calendar Mapping */}
-                      <div className="flex items-start gap-3">
-                        <Calendar className="h-5 w-5 text-indigo-600 shrink-0" />
-                        <div>
-                          <span className="block font-bold text-slate-900 uppercase tracking-wider text-3xs">Stage 2: Advisory Mapping</span>
-                          <p className="text-slate-550 mt-0.5 leading-relaxed">
-                            Our managing partner (Marcus Sterling) or cognitive lead (Dr. Sarah Jenkins) will coordinate a 30-minute MS Teams screen-share.
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Ticket Number */}
-                      <div className="pt-2 border-t border-slate-200 flex justify-between items-center text-3xs text-slate-500">
-                        <span>Ticket ID: BP-2026-8809</span>
-                        <span>SLA: <strong className="text-blue-600 font-bold">4 Hours Response</strong></span>
-                      </div>
-                    </div>
-
                     <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
-                      <button
-                        onClick={() => {
-                          setIsSubmitSuccess(false);
-                          setFormData({
-                            firstname: '',
-                            lastname: '',
-                            jobtitle: '',
-                            linkedin: '',
-                            email: '',
-                            phone: '',
-                            message: ''
-                          });
-                        }}
-                        className="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs font-bold text-slate-600 hover:bg-slate-50 transition-all cursor-pointer shadow-3xs"
-                      >
-                        Submit another request
-                      </button>
                       <button
                         onClick={() => {
                           setCurrentPage('home');
@@ -379,7 +335,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         }}
                         className="rounded-full bg-gray-900 hover:bg-gray-500 px-5 py-2.5 text-xs font-bold text-white shadow-lg shadow-blue-600/15 inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                       >
-                        Return to Home <ArrowRight className="h-3.5 w-3.5" />
+                        Return <ArrowRight className="h-3.5 w-3.5" />
                       </button>
                     </div>
                   </motion.div>

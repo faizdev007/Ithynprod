@@ -855,7 +855,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                       ) : (
                         <>
                           <MessageSquare className="h-4 w-4" />
-                          <span>Submit Request to Advisory Desk</span>
+                          <span>Submit Request</span>
                         </>
                       )}
                     </button>
