@@ -37,13 +37,42 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
 
   const scrollToContact = () => {
     const contactSection = document.getElementById("quick-contact");
-    if(!contactSection){  
-      setCurrentPage('home');
+
+    if (!contactSection) {
+      setCurrentPage("home");
+
+      // Wait for the page to render before scrolling and focusing
+      setTimeout(() => {
+        const section = document.getElementById("quick-contact");
+
+        section?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        const firstInput = section?.querySelector(
+          "input, textarea, select"
+        ) as HTMLElement | null;
+
+        firstInput?.focus();
+      }, 500);
+
+      return;
     }
-    contactSection?.scrollIntoView({
+
+    contactSection.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
+
+    // Focus after the smooth scroll starts
+    setTimeout(() => {
+      const firstInput = contactSection.querySelector(
+        "input, textarea, select"
+      ) as HTMLElement | null;
+
+      firstInput?.focus();
+    }, 500);
   };
 
   return (
