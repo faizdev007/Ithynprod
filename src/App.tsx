@@ -12,6 +12,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import ApplicationServices from './pages/ApplicationServices';
 import CustomerBPO from './pages/CustomerBPO';
+import FixedPackages from './pages/FixedPackages';
 import DigitalMarketing from './pages/DigitalMarketing';
 import HireExperts from './pages/HireExperts';
 import CaseStudies from './pages/CaseStudies';
@@ -36,6 +37,22 @@ export default function App() {
   const handleOpenConsultation = () => {
     setCurrentPage('contact');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    setTimeout(()=>{
+      const section = document.getElementById("mainContact");
+      
+      section?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  
+      const firstInput = section?.querySelector(
+        "input, textarea, select"
+      ) as HTMLElement | null;
+      
+      console.log(firstInput);
+      firstInput?.focus();
+    },600);
   };
 
   const handleSelectSubService = (serviceId: string) => {
@@ -62,6 +79,8 @@ export default function App() {
         return <CustomerBPO setCurrentPage={setCurrentPage} onOpenConsultation={handleOpenConsultation} />;
       case 'digital-marketing':
         return <DigitalMarketing setCurrentPage={setCurrentPage} onOpenConsultation={handleOpenConsultation} />;
+      case 'fixed-packages':
+        return <FixedPackages setCurrentPage={setCurrentPage} onOpenConsultation={handleOpenConsultation} />;
       case 'hire-experts':
         return <HireExperts setCurrentPage={setCurrentPage} onOpenConsultation={handleOpenConsultation} />;
       case 'case-studies':

@@ -72,6 +72,10 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
     return caps;
   };
 
+  let storeDataforContactUs = (e:any) =>{
+    localStorage.setItem('queryFor',e);
+  }
+
   const handleInquirySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -219,6 +223,15 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
                     </span>
                   ))}
                 </div>
+                <button 
+                  onClick={()=>{
+                    storeDataforContactUs(exp.title);
+                    onOpenConsultation();
+                  }}
+                  className={"w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white py-2.5 text-xs font-bold transition-all cursor-pointer"}
+                >
+                  Request Similar Profile
+                </button>
               </div>
             </motion.div>
           ))}

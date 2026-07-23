@@ -10,6 +10,10 @@ interface CaseStudiesProps {
 }
 
 export default function CaseStudies({ setCurrentPage, onOpenConsultation }: CaseStudiesProps) {
+  let storeDataforContactUs = (e:any) =>{
+      localStorage.setItem('queryFor',e);
+  }
+
   const [activeStudyId, setActiveStudyId] = useState<string | null>(null);
 
   const handleStudyToggle = (id: string) => {
@@ -179,7 +183,10 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
                             Close Analysis
                           </button>
                           <button
-                            onClick={onOpenConsultation}
+                            onClick={()=>{
+                              storeDataforContactUs("Case Studies");
+                              onOpenConsultation();
+                            }}
                             className="rounded-full bg-gray-900 px-4 py-2 text-2xs font-bold text-white hover:bg-gray-500 transition-all cursor-pointer shadow-sm"
                           >
                             Book similar project

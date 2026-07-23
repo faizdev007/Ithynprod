@@ -9,7 +9,10 @@ interface AboutProps {
 }
 
 export default function About({ setCurrentPage, onOpenConsultation }: AboutProps) {
-  
+  let storeDataforContactUs = (e:any) =>{
+    localStorage.setItem('queryFor',e);
+  }
+
   const leaders = [
     {
       name: "Marcus Sterling",
@@ -162,7 +165,10 @@ export default function About({ setCurrentPage, onOpenConsultation }: AboutProps
 
               <div className="pt-4 flex gap-4">
                 <button
-                  onClick={onOpenConsultation}
+                  onClick={()=>{
+                    storeDataforContactUs('AboutUs');
+                    onOpenConsultation();
+                  }}
                   className="px-5 py-2.5 bg-gray-900 hover:bg-gray-500 text-white rounded-full text-xs font-bold transition-all shadow-lg shadow-blue-600/20 flex items-center gap-1 cursor-pointer"
                 >
                   Request Delivery Deck <ChevronRight className="h-4 w-4" />

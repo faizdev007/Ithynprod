@@ -12,6 +12,10 @@ interface CustomerBPOProps {
 }
 
 export default function CustomerBPO({ setCurrentPage, onOpenConsultation }: CustomerBPOProps) {
+  let storeDataforContactUs = (e:any) =>{
+    localStorage.setItem('queryFor',e);
+  }
+
   const customerBpoDetailed = [
     {
       id: 'customer-support',
@@ -190,7 +194,7 @@ export default function CustomerBPO({ setCurrentPage, onOpenConsultation }: Cust
         </div>
 
         {/* Hero Call-Out */}
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-700 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div className="bg-gradient-to-r from-gray-600 to-gray-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div className="space-y-4 max-w-2xl">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white text-3xs font-mono font-bold uppercase tracking-widest">
               Omnichannel Excellence
@@ -202,7 +206,10 @@ export default function CustomerBPO({ setCurrentPage, onOpenConsultation }: Cust
           </div>
           <div className="shrink-0">
             <button
-              onClick={onOpenConsultation}
+              onClick={()=>{
+                storeDataforContactUs('Customer Service & BPO');
+                onOpenConsultation();
+              }}
               className="inline-flex items-center gap-2 bg-white text-indigo-700 hover:bg-indigo-50 px-6 py-3 rounded-full text-sm font-bold shadow-lg shadow-indigo-900/20 transition-all cursor-pointer"
             >
               <span>Schedule a Call</span>

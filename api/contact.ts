@@ -6,6 +6,7 @@ export default async function handler(req: any, res: any) {
   }
 
   const {
+    queryFor,
     firstname,
     lastname,
     jobtitle,
@@ -85,6 +86,10 @@ export default async function handler(req: any, res: any) {
                   ? `<a href="${linkedin}" target="_blank">${linkedin}</a>`
                   : "Not provided"
               }</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 0;font-weight:bold;">Request From</td>
+              <td>${queryFor || "--"}</td>
             </tr>
           </table>
 

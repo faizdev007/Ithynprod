@@ -159,6 +159,10 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
     { name: "AWS", url: "/assets/trustedby/company22.webp" },
   ];
 
+  let storeDataforContactUs = (e:any) =>{
+    localStorage.setItem('queryFor',e);
+  }
+
   return (
     <div className="relative overflow-hidden bg-slate-50 text-slate-800" id="home-page">
       {/* Background radial accent glow */}
@@ -542,10 +546,13 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
 
                   <div className="mt-8 pt-6 border-t border-slate-150">
                     <button
-                      onClick={onOpenConsultation}
+                      onClick={()=>{
+                        storeDataforContactUs(exp.title);
+                        onOpenConsultation();
+                      }}
                       className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white py-2.5 text-xs font-bold transition-all cursor-pointer"
                     >
-                      <span>Request Profile Portfolio</span>
+                      <span>Request Similar Profile</span>
                     </button>
                   </div>
                 </motion.div>

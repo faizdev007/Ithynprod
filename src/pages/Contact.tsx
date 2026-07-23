@@ -11,6 +11,7 @@ interface ContactProps {
 
 export default function Contact({ setCurrentPage }: ContactProps) {
   const [formData, setFormData] = useState<ContactInquiry>({
+    queryFor:'',
     firstname: '',
     lastname: '',
     jobtitle: '',
@@ -159,12 +160,12 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                     transition={{ duration: 0.25 }}
                     onSubmit={handleFormSubmit}
                     className="space-y-6 text-xs"
+                    id="mainContact"
                   >
                     <div className="space-y-1.5 border-b border-slate-200 pb-3">
                       <h3 className="font-display text-base font-bold text-slate-900">Let’s Talk!</h3>
                       <p className="text-slate-500 text-3xs">Fill in your details and We’ll reach out to you shortly.</p>
                     </div>
-
                     {/* Standard details */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
@@ -261,7 +262,13 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                         </div>
                       </div>
                     </div>
-
+                      
+                    <input
+                      type="hidden"
+                      value={formData.queryFor}
+                      onChange={(e) => setFormData({ ...formData, queryFor: localStorage.getItem('queryFor') })}
+                      className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
+                    />
                     
                     {/* Brief outline */}
                     <div>

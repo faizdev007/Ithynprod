@@ -10,6 +10,10 @@ interface ServicesProps {
 }
 
 export default function Services({ setCurrentPage, onOpenConsultation }: ServicesProps) {
+  let storeDataforContactUs = (e:any) =>{
+    localStorage.setItem('queryFor',e);
+  }
+
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const getServiceIcon = (iconName: string) => {
@@ -171,7 +175,10 @@ export default function Services({ setCurrentPage, onOpenConsultation }: Service
                   </div>
 
                   <button
-                    onClick={onOpenConsultation}
+                    onClick={()=>{
+                      storeDataforContactUs(service.title);
+                      onOpenConsultation();
+                    }}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gray-900 hover:bg-gray-500 px-5 py-2.5 text-xs font-bold text-white transition-all shadow-md shadow-blue-600/15 cursor-pointer"
                   >
                     <span>Inquire for {service.title.split(' (')[0]} scope</span>

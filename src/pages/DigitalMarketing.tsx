@@ -12,6 +12,10 @@ interface DigitalMarketingProps {
 }
 
 export default function DigitalMarketing({ setCurrentPage, onOpenConsultation }: DigitalMarketingProps) {
+  let storeDataforContactUs = (e:any) =>{
+    localStorage.setItem('queryFor',e);
+  }
+
   const digitalMarketingDetailed = [
     {
       id: 'digital-ads',
@@ -229,7 +233,7 @@ export default function DigitalMarketing({ setCurrentPage, onOpenConsultation }:
         </div>
 
         {/* Hero Call-Out */}
-        <div className="bg-gradient-to-r from-purple-600 to-pink-700 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div className="bg-gradient-to-r from-gray-600 to-gray-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div className="space-y-4 max-w-2xl">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white text-3xs font-mono font-bold uppercase tracking-widest">
               Data-Driven Conversion
@@ -241,7 +245,10 @@ export default function DigitalMarketing({ setCurrentPage, onOpenConsultation }:
           </div>
           <div className="shrink-0">
             <button
-              onClick={onOpenConsultation}
+              onClick={()=>{
+                storeDataforContactUs('Digital Marketing Services');
+                onOpenConsultation();
+              }}
               className="inline-flex items-center gap-2 bg-white text-purple-700 hover:bg-purple-50 px-6 py-3 rounded-full text-sm font-bold shadow-lg shadow-purple-900/20 transition-all cursor-pointer"
             >
               <span>Schedule a Call</span>
