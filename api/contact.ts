@@ -6,7 +6,7 @@ export default async function handler(req: any, res: any) {
   }
 
   const {
-    queryFor,
+    requestfor,
     firstname,
     lastname,
     jobtitle,
@@ -89,7 +89,7 @@ export default async function handler(req: any, res: any) {
             </tr>
             <tr>
               <td style="padding:10px 0;font-weight:bold;">Request From</td>
-              <td>${queryFor || "--"}</td>
+              <td>${requestfor || "--"}</td>
             </tr>
           </table>
 

@@ -11,7 +11,7 @@ interface ContactProps {
 
 export default function Contact({ setCurrentPage }: ContactProps) {
   const [formData, setFormData] = useState<ContactInquiry>({
-    queryFor:'',
+    requestfor:'',
     firstname: '',
     lastname: '',
     jobtitle: '',
@@ -265,8 +265,8 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                       
                     <input
                       type="hidden"
-                      value={formData.queryFor}
-                      onChange={(e) => setFormData({ ...formData, queryFor: localStorage.getItem('queryFor') })}
+                      value={formData.requestfor}
+                      onChange={(e) => setFormData({ ...formData, requestfor: localStorage.getItem('queryFor') })}
                       className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
                     />
                     
