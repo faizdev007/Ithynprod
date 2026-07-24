@@ -89,8 +89,8 @@ export default async function handler(req: any, res: any) {
               }</td>
             </tr>
             <tr>
-              <td style="padding:10px 0;font-weight:bold;">${inputName}</td>
-              <td>${inputData || "--"}</td>
+              <td style="padding:10px 0;font-weight:bold;">${inputName || "Page"}</td>
+              <td>${inputData || "Home"}</td>
             </tr>
           </table>
 
