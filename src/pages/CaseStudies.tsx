@@ -12,7 +12,7 @@ interface CaseStudiesProps {
 export default function CaseStudies({ setCurrentPage, onOpenConsultation }: CaseStudiesProps) {
   let storeDataforContactUs = (e:any) =>{
     localStorage.setItem('inputName',e ? 'Case Study' : 'Page');
-    localStorage.setItem('inputData',e);
+    localStorage.setItem('inputData',e ? e : 'Case Studies');
   }
 
   const [activeStudyId, setActiveStudyId] = useState<string | null>(null);
@@ -228,7 +228,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
           <div className="pt-2">
             <button
               onClick={()=>{
-                  storeDataforContactUs('Case Studies');
+                  storeDataforContactUs();
                   onOpenConsultation();
                 }}
               className="rounded-full bg-gray-900 hover:bg-gray-500 px-6 py-3 text-xs font-bold text-white shadow-lg shadow-blue-600/20 inline-flex items-center gap-1.5 transition-all cursor-pointer"
