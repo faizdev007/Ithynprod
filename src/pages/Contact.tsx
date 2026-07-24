@@ -11,13 +11,13 @@ interface ContactProps {
 
 export default function Contact({ setCurrentPage }: ContactProps) {
   const [formData, setFormData] = useState<ContactInquiry>({
-    requestfor:'',
     firstname: '',
     lastname: '',
     jobtitle: '',
     linkedin: '',
     email: '',
     phone: '',
+    requestfor: localStorage.getItem("queryFor") || "",
     message: ''
   });
 
@@ -26,6 +26,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
   const [isSubmitStatus, setIsSubmitStatus] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [phone, setPhone] = useState("");
+
   const [phoneError, setPhoneError] = useState(false);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -46,6 +47,7 @@ export default function Contact({ setCurrentPage }: ContactProps) {
     setIsSubmitting(true);
 
     try {
+      console.log(formData);
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -263,13 +265,6 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                       </div>
                     </div>
                       
-                    <input
-                      type="hidden"
-                      value={formData.requestfor}
-                      onChange={(e) => setFormData({ ...formData, requestfor: localStorage.getItem('queryFor') })}
-                      className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all"
-                    />
-                    
                     {/* Brief outline */}
                     <div>
                       <label className="block text-3xs font-mono uppercase text-slate-500 mb-1">Brief Description *</label>

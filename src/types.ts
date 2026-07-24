@@ -65,13 +65,14 @@ export interface JobOpening {
 }
 
 export interface ContactInquiry {
-  name: string;
-  email: string;
-  company: string;
-  phone?: string;
-  serviceInterest: string;
-  message: string;
-  budget?: string;
+  firstname: string,
+  lastname: string,
+  jobtitle: string,
+  linkedin?: string,
+  email: string,
+  phone: string,
+  requestfor?: string,
+  message: string
 }
 
 export interface ExpertProfile {

@@ -5,6 +5,8 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
 
+  console.log(req);
+
   const {
     requestfor,
     firstname,
