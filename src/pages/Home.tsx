@@ -789,7 +789,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                     </div>
                     <h3 className="font-display text-lg font-bold text-slate-900">Enquiry Received</h3>
                     <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
-                      Thank you. Your request has been logged. Our Canary Wharf strategic advisory desk will email you shortly with next steps.
+                      Thank you. Your request has been logged. Strategic advisory desk will email you shortly with next steps.
                     </p>
                   </motion.div>
                 ) : (
