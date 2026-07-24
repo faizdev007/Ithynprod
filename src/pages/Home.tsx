@@ -160,7 +160,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
   ];
 
   let storeDataforContactUs = (e:any) =>{
-    localStorage.setItem('inputName','Page');
+    localStorage.setItem('inputName','Hire Expert');
     localStorage.setItem('inputData',e);
   }
 
