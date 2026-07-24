@@ -120,8 +120,8 @@ export default function Contact({ setCurrentPage }: ContactProps) {
                 <div>
                   <span className="block font-bold text-slate-900">Inquiry Gateways</span>
                   <p className="text-slate-600 mt-1 leading-relaxed">
-                    Client Scopes: <strong className="text-slate-900">inquiries@flumix.co.uk</strong><br />
-                    {/* Partnership Operations: <strong className="text-slate-900">alliances@flumix.co.uk</strong> */}
+                    Client Scopes: <strong className="text-slate-900">inquiries@Flumix.co.uk</strong><br />
+                    {/* Partnership Operations: <strong className="text-slate-900">alliances@Flumix.co.uk</strong> */}
                   </p>
                 </div>
               </div>

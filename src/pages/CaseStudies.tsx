@@ -46,7 +46,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
             Enterprise Case Studies
           </h1>
           <p className="text-base text-slate-600 leading-relaxed">
-            Discover how FLUMIX’s architectural advisory, operating in sync with our certified engineering squads, has resolved core pipeline bottlenecks and deployed secure cognitive intelligence.
+            Discover how Flumix’s architectural advisory, operating in sync with our certified engineering squads, has resolved core pipeline bottlenecks and deployed secure cognitive intelligence.
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
                           {/* Solution Card */}
                           <div className="space-y-3.5">
                             <div className="inline-flex items-center gap-2 rounded-full bg-blue-5 border border-blue-100 px-3 py-1 text-2xs font-mono text-blue-600">
-                              <span>FLUMIX Advisory + Technical Execution</span>
+                              <span>Flumix Advisory + Technical Execution</span>
                             </div>
                             <h4 className="font-display text-sm font-bold text-slate-900">The Technical Execution</h4>
                             <p className="text-xs text-slate-600 leading-relaxed">

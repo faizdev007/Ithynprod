@@ -81,7 +81,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenConsultation
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')} id="nav-logo">
-            <img src="/assets/logo/logonew2.webp" alt="FLUMIX Logo" className="h-16 w-auto" />
+            <img src="/assets/logo/logonew2.webp" alt="Flumix Logo" className="h-16 w-auto" />
           </div>
 
           {/* Desktop Navigation */}

@@ -59,10 +59,10 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
   const steps = [
     {
       title: "Query Analysis",
-      subtitle: "FLUMIX Agent Intake",
-      file: "FLUMIX_intake.py",
+      subtitle: "Flumix Agent Intake",
+      file: "Flumix_intake.py",
       command: "> ANALYZING USER REQUEST --model=deep-reasoning-v2",
-      log1: "Parsed prompt: 'Incorporate FLUMIX predictive agent into logistics flow...'",
+      log1: "Parsed prompt: 'Incorporate Flumix predictive agent into logistics flow...'",
       log2: "Extracted intent: Neural orchestration layer for B2B supply logistics.",
       color: "from-blue-500 to-cyan-500",
       accentColor: "text-blue-500",
@@ -81,7 +81,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
     },
     {
       title: "Agent Reasoning",
-      subtitle: "FLUMIX Cognitive Loop",
+      subtitle: "Flumix Cognitive Loop",
       file: "cognitive_core.sh",
       command: "> COMPILING REASONING GRAPH --strategy=governance",
       log1: "Synthesizing mitigation plan: Scale Databricks clusters (+2 worker nodes).",
@@ -298,7 +298,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Core Data & AI Services</h2>
             <p className="mt-4 text-base text-slate-650">
-              FLUMIX specializes in high-level strategic architecture and rigorous governance. We couple our plans with deep engineering expertise to deploy actual production systems.
+              Flumix specializes in high-level strategic architecture and rigorous governance. We couple our plans with deep engineering expertise to deploy actual production systems.
             </p>
           </div>
 
@@ -446,7 +446,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
               ON-DEMAND ELITE TALENT
             </span>
             <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Hire Certified FLUMIX Experts
+              Hire Certified Flumix Experts
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed">
               Bypass slow hiring pipelines. Embed elite UK-vetted data engineers, cloud architects, and machine learning experts directly into your sprint teams in under 48 hours.
@@ -661,7 +661,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
             </h2>
             
             <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
-              We structure our consulting agreements around predictable monthly retainers or scoped milestones. FLUMIX manages strategic architectural blueprints and continuous delivery validation, protecting your budget from scope creep.
+              We structure our consulting agreements around predictable monthly retainers or scoped milestones. Flumix manages strategic architectural blueprints and continuous delivery validation, protecting your budget from scope creep.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto pt-4" id="pricing-tiers-cards">
@@ -675,7 +675,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                 <div className="absolute right-2 top-2 rounded-full bg-gray-900 text-white px-2.5 py-0.5 text-[8px] font-bold uppercase tracking-wider">Most Needed</div>
                 <span className="text-2xs font-mono font-bold text-blue-600 uppercase tracking-widest">Execution</span>
                 <h4 className="font-display text-base font-bold text-slate-900 mt-1">Managed Squad</h4>
-                <p className="text-3xs text-slate-500 mt-1 leading-relaxed">FLUMIX architecture oversight + dedicated engineering sprint pods.</p>
+                <p className="text-3xs text-slate-500 mt-1 leading-relaxed">Flumix architecture oversight + dedicated engineering sprint pods.</p>
                 <div className="mt-4 border-t border-slate-100 pt-3 text-xs font-semibold text-indigo-600">Monthly Sprints</div>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left hover:border-slate-300 transition-all shadow-sm">
