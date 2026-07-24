@@ -17,7 +17,8 @@ export default function Contact({ setCurrentPage }: ContactProps) {
     linkedin: '',
     email: '',
     phone: '',
-    requestfor: localStorage.getItem("queryFor") || "",
+    inputName: localStorage.getItem("inputData") || "",
+    inputData: localStorage.getItem("inputData") || "",
     message: ''
   });
 

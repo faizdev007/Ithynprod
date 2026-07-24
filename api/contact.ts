@@ -12,7 +12,8 @@ export default async function handler(req: any, res: any) {
     linkedin,
     email,
     phone,
-    requestfor,
+    inputName,
+    inputData,
     message,
   } = req.body;
 
@@ -88,8 +89,8 @@ export default async function handler(req: any, res: any) {
               }</td>
             </tr>
             <tr>
-              <td style="padding:10px 0;font-weight:bold;">Request</td>
-              <td>${requestfor || "--"}</td>
+              <td style="padding:10px 0;font-weight:bold;">${inputName}</td>
+              <td>${inputData || "--"}</td>
             </tr>
           </table>
 

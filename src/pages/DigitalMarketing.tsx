@@ -13,7 +13,8 @@ interface DigitalMarketingProps {
 
 export default function DigitalMarketing({ setCurrentPage, onOpenConsultation }: DigitalMarketingProps) {
   let storeDataforContactUs = (e:any) =>{
-    localStorage.setItem('queryFor',e);
+    localStorage.setItem('inputName','Page');
+    localStorage.setItem('inputData',e);
   }
 
   const digitalMarketingDetailed = [

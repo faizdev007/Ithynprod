@@ -71,7 +71,8 @@ export interface ContactInquiry {
   linkedin?: string,
   email: string,
   phone: string,
-  requestfor?: string,
+  inputName?: string,
+  inputData?: string,
   message: string
 }
 

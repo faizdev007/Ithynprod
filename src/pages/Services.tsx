@@ -11,7 +11,8 @@ interface ServicesProps {
 
 export default function Services({ setCurrentPage, onOpenConsultation }: ServicesProps) {
   let storeDataforContactUs = (e:any) =>{
-    localStorage.setItem('queryFor',e);
+    localStorage.setItem('inputName','Data & AI Services');
+    localStorage.setItem('inputData',e);
   }
 
   const [selectedCategory, setSelectedCategory] = useState<string>('all');

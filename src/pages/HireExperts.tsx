@@ -73,7 +73,8 @@ export default function HireExperts({ setCurrentPage, onOpenConsultation }: Hire
   };
 
   let storeDataforContactUs = (e:any) =>{
-    localStorage.setItem('queryFor',e);
+    localStorage.setItem('inputName','Hire Expert');
+    localStorage.setItem('inputData',e);
   }
 
   const handleInquirySubmit = async (e: React.FormEvent) => {

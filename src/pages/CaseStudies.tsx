@@ -11,7 +11,8 @@ interface CaseStudiesProps {
 
 export default function CaseStudies({ setCurrentPage, onOpenConsultation }: CaseStudiesProps) {
   let storeDataforContactUs = (e:any) =>{
-      localStorage.setItem('queryFor',e);
+    localStorage.setItem('inputName','Case Study');
+    localStorage.setItem('inputData',e);
   }
 
   const [activeStudyId, setActiveStudyId] = useState<string | null>(null);
@@ -184,7 +185,7 @@ export default function CaseStudies({ setCurrentPage, onOpenConsultation }: Case
                           </button>
                           <button
                             onClick={()=>{
-                              storeDataforContactUs("Case Studies");
+                              storeDataforContactUs(study.title);
                               onOpenConsultation();
                             }}
                             className="rounded-full bg-gray-900 px-4 py-2 text-2xs font-bold text-white hover:bg-gray-500 transition-all cursor-pointer shadow-sm"

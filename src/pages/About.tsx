@@ -9,8 +9,10 @@ interface AboutProps {
 }
 
 export default function About({ setCurrentPage, onOpenConsultation }: AboutProps) {
+
   let storeDataforContactUs = (e:any) =>{
-    localStorage.setItem('queryFor',e);
+    localStorage.setItem('inputName','Page');
+    localStorage.setItem('inputData','About Us');
   }
 
   const leaders = [

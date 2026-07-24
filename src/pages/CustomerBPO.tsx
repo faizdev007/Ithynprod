@@ -13,7 +13,8 @@ interface CustomerBPOProps {
 
 export default function CustomerBPO({ setCurrentPage, onOpenConsultation }: CustomerBPOProps) {
   let storeDataforContactUs = (e:any) =>{
-    localStorage.setItem('queryFor',e);
+    localStorage.setItem('inputName','Page');
+    localStorage.setItem('inputData',e);
   }
 
   const customerBpoDetailed = [

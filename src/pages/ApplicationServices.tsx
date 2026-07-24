@@ -13,7 +13,8 @@ interface ApplicationServicesProps {
 
 export default function ApplicationServices({ setCurrentPage, onOpenConsultation }: ApplicationServicesProps) {
   let storeDataforContactUs = (e:any) =>{
-    localStorage.setItem('queryFor',e);
+    localStorage.setItem('inputName','Page');
+    localStorage.setItem('inputData',e);
   }
   const appServicesDetailed = [
     {
