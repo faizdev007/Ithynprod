@@ -160,7 +160,7 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
   ];
 
   let storeDataforContactUs = (e:any) =>{
-    localStorage.setItem('inputName','Hire Expert');
+    localStorage.setItem('inputName', e ? 'Hire Expert' : 'Page');
     localStorage.setItem('inputData',e);
   }
 
@@ -219,7 +219,10 @@ export default function Home({ setCurrentPage, onOpenConsultation, theme = 'ligh
                 id="hero-actions"
               >
                 <button
-                  onClick={onOpenConsultation}
+                  onClick={()=>{
+                    storeDataforContactUs('');
+                    onOpenConsultation();
+                  }}
                   className="px-6 py-3 bg-gray-900 hover:bg-gray-500 text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-blue-600/15 flex items-center gap-2 cursor-pointer"
                 >
                   Schedule a Call
