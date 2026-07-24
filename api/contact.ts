@@ -5,16 +5,14 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
 
-  console.log(req);
-
   const {
-    requestfor,
     firstname,
     lastname,
     jobtitle,
     linkedin,
     email,
     phone,
+    requestfor,
     message,
   } = req.body;
 
@@ -90,7 +88,7 @@ export default async function handler(req: any, res: any) {
               }</td>
             </tr>
             <tr>
-              <td style="padding:10px 0;font-weight:bold;">Request From</td>
+              <td style="padding:10px 0;font-weight:bold;">Request</td>
               <td>${requestfor || "--"}</td>
             </tr>
           </table>
